@@ -52,33 +52,19 @@ a,
 .callout h4:hover{
   border-top: 3px solid #6D6D6D;
   border-bottom: 1px solid #6D6D6D;
-<<<<<<< HEAD
-  /*color: #4D4D4D;*/
-=======
->>>>>>> df437ca207e9d8943d414b1cbd970f81125dd32f
   text-decoration: none;
 }
 .callout h4:hover,
 .callout h4:hover small{
   color: #4D4D4D;
 }
-<<<<<<< HEAD
-.callout h4 small{  
-=======
 .callout h4 small{
->>>>>>> df437ca207e9d8943d414b1cbd970f81125dd32f
   font-size: 0.7em;
   color: #95CFE8;
   line-height: 2em;
   padding-top: 10px;
   display: block;
 }
-<<<<<<< HEAD
-/*.callout h4 small:hover{
-  color: #4D4D4D;
-}*/
-=======
->>>>>>> df437ca207e9d8943d414b1cbd970f81125dd32f
 .summary{
   font-size: 1em;
   line-height: 1.5em;
