@@ -42,7 +42,7 @@ a:hover {
 .home {
   padding: 5px;
   margin-top: 25px;
-  margin-left: 290px;
+  margin-left: 260px;
   display: inline-block;
   text-align: right;
  }
@@ -60,14 +60,6 @@ a:hover {
  }
 
 /*語系下拉選單*/
-/*  margin: 10px 0 0 5px;
-  font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
-  font-size: 0.9em;
-  line-height: 1.5em;
-  color:#3a3a3a;
-  width:130px;
-  height:28px;
-}*/
 ul li {
   list-style-type: none;
 }
