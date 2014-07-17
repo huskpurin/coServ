@@ -4,8 +4,7 @@
 .clear{
   clear: both;
 }
-a,
-*:hover{
+a, *:hover{
   text-decoration: none;
 }
 .matter{
@@ -22,8 +21,8 @@ a,
   border-top: 3px solid #2EA0D1;
   text-align: center;
   font-size: 2em;
-  /*color: #2EA0D1;*/
-  color: #4d4d4d;
+  color: #2EA0D1;
+  /*color: #4d4d4d;*/
   line-height: 2em;
 }
 /*清單*/
@@ -39,19 +38,21 @@ a,
   float: left;
   text-align: center;
   cursor: pointer;
+  height: 210px;
+  overflow: hidden; 
 }
 .callout h4{
-  border-top: 3px solid #2EA0D1;
-  border-bottom: 1px solid #2EA0D1;
+  border-top: 3px double #2EA0D1; 
+  /*border-bottom: 1px solid #2EA0D1;*/ 
   padding: 15px 8px 0;
-  height: 125px;
+  margin: 0;
+  /*height: 125px;*/
   color: #2EA0D1;
   line-height: 1.4em;
   font-size: 1.3em;
 }
 .callout h4:hover{
-  border-top: 3px solid #6D6D6D;
-  border-bottom: 1px solid #6D6D6D;
+  border-color:#6D6D6D;
   text-decoration: none;
 }
 .callout h4:hover,
@@ -61,20 +62,25 @@ a,
 .callout h4 small{
   font-size: 0.7em;
   color: #95CFE8;
-  line-height: 2em;
+  line-height: 1em;
   padding-top: 10px;
+  margin: 0;
   display: block;
 }
 .summary{
   font-size: 1em;
   line-height: 1.5em;
-  color: #4D4D4D;
-  padding: 2px 6px;
-  height: 68px;
+  /*color: #4D4D4D;*/
+  color: #2EA0D1;
+  padding: 0 6px 2px;
+  /*height: 68px;*/
   width: 230px;
   overflow: hidden;
   text-overflow : ellipsis;
   /*white-space : nowrap;*/
+}
+.line {
+  margin: 0;
 }
 
 /*分頁按鈕*/

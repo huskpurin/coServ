@@ -1,3 +1,10 @@
+<script src="/shared/js/lib/jquery-1.10.2.min.js"></script>
+<script src="/shared/js/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/shared/js/wFront.js"></script>
+<script src="/shared/js/lib/jquery.cleditor.min.js"></script>
+<script src="/shared/js/sha1.js"></script>
+
+
 <div class="matter">
 	<div class="typeside">
 		<div class="type active"><%= ph.list %></div>
@@ -17,6 +24,11 @@
 			<a href="/blog2/view/<%=item.ngID%>?_loc=<%=bi.locale%>">
 				<h4><%= item.title %>
 				<small><%= createTime %></small></h4></a>
+			<p class="line">
+				<span style="width:20%;display:inline-block;"></span>
+				<span style="border-top: 1px solid #2EA0D1; width:60%;display:inline-block;"></span>
+				<span style="display:inline-block;"></span>
+			</p>
 			<p class="summary"><%= item.summary %></p>
 		</div>
 
@@ -24,16 +36,16 @@
 
 	</div>
 	<div class="clear"></div>
-	<div class="row_down">
+	<!-- <div class="row_down">
 		<div class="chang">
-			<!-- <span class="LR"><a href="#">&laquo;</a></span>
+			<span class="LR"><a href="#">&laquo;</a></span>
 			<span><a href="#">1</a></span>
 			<span><a href="#">2</a></span>
 			<span><a href="#">3</a></span>
 			<span><a href="#">4</a></span>
 			<span><a href="#">5</a></span>
 			<span class="disabled"><a href="#">...</a></span>
-			<span class="LR"><a href="#">&raquo;</a></span> -->
+			<span class="LR"><a href="#">&raquo;</a></span> 
 		</div>
-	</div>
+	</div>-->
 </div>
