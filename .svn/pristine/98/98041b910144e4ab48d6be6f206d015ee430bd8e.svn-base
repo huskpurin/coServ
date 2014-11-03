@@ -1,0 +1,73 @@
+exports.run = function(inData, callback)  {
+	var  rtnData = {errCode: 0};
+	rtnData.value = {
+		list: [
+		{
+			slogn: '他們都用了coServ',
+			title: '玩美文創',
+			body: 'http://www.wonderfuldesign.com.tw/',
+			img: '../index/img/case1.jpg'
+		},
+		{
+			title: '玩美文創',
+			body: 'http://www.wonderfuldesign.com.tw/',
+			img: '../index/img/case1.jpg'
+		},
+		{
+			title: '玩美文創',
+			body: 'http://www.wonderfuldesign.com.tw/',
+			img: '../index/img/case1.jpg'
+		}
+		]
+	};
+	callback( rtnData );
+};
+exports.run = function(inData, callback)  {
+	var  rtnData = {errCode: 0};
+	if (inData._loc == 'en') {
+		rtnData.value = {
+
+			list: [
+			{
+				slogn: 'They have spent coServ',
+				title: 'wonderfuldesign',
+				body: 'http://www.wonderfuldesign.com.tw/',
+				img: '../index/img/case1.jpg'
+			},
+			{
+				title: 'wonderfuldesign',
+				body: 'http://www.wonderfuldesign.com.tw/',
+				img: '../index/img/case1.jpg'
+			},
+			{
+				title: 'wonderfuldesign',
+				body: 'http://www.wonderfuldesign.com.tw/',
+				img: '../index/img/case1.jpg'
+			}
+			]
+		};
+	}
+	else if (inData._loc == 'zh') {
+		rtnData.value = {
+			list: [
+			{
+				slogn: '他們都用了coServ',
+				title: '玩美文創',
+				body: 'http://www.wonderfuldesign.com.tw/',
+				img: '../index/img/case1.jpg'
+			},
+			{
+				title: '玩美文創',
+				body: 'http://www.wonderfuldesign.com.tw/',
+				img: '../index/img/case1.jpg'
+			},
+			{
+				title: '玩美文創',
+				body: 'http://www.wonderfuldesign.com.tw/',
+				img: '../index/img/case1.jpg'
+			}
+			]
+		};
+	}
+	callback( rtnData );
+};

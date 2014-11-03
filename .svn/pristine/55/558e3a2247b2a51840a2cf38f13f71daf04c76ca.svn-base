@@ -1,0 +1,26 @@
+<div class="infopager">
+  <div class="title">課程介紹 <span>Course Introduction</span></div>
+    <div class="article">
+    	  <!-- 連結報名系統 -->
+        <div class="section">
+         	<% block('/system', {id: 49600}); %>
+        </div>
+        <!-- 課程簡介 -->
+        <div class="section">
+         	<% block('/subject', {id: 49609}); %>
+        </div>
+        <!-- 課程內容 -->
+        <div class="section">
+         	<% block('/contents', {id: 49630}); %>
+        </div>
+        <!-- 專業講師群 -->
+        <div class="section">
+         	<% block('/lector', {id: 49632}); %>
+        </div>
+        <!-- 報名須知 -->
+        <div class="section">
+         	<% block('/apply', {id: 49633}); %>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>

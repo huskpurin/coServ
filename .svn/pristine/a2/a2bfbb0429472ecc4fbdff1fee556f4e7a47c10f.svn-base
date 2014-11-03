@@ -1,0 +1,25 @@
+@import "wonderful.scss";
+
+h4 {
+	margin-top:40px;
+}
+p {
+	@include p;
+}
+ul{
+	-webkit-padding-start: 5px;
+	li {
+		line-height: 24px;
+		.indent {
+			@include indent;
+		}
+	}
+
+}
+a {
+	@include textC;
+	img {
+		margin: 30px auto 0;
+		display: block;
+	}
+}

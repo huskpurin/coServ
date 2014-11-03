@@ -1,0 +1,68 @@
+@import "wonderful.scss";
+
+.newspager {
+	@include page;
+	.title{	
+		@include title;
+	}
+	.article {
+		@include article1;
+
+		.section{
+			@include section;
+			img {
+				@include newsimg;
+			}
+			p {
+				@include p;
+			}
+			.more {
+				margin-top: 5px;
+				float: right;
+				a {
+				color: #555859;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+.clear {
+	@include clear;
+}
+.btn-more {
+	width: 93px;
+	height: 26px;
+	background: url("/play/more_.png") no-repeat;
+}
+
+.panel-group{
+	margin-bottom: 2px;
+	.panel {
+		border-top: none;
+		border-bottom: none;
+	}
+	.panel-custom {
+		background: transparent;
+		border: none;
+		.panel-heading.active {
+			background: #F1894A;
+		}
+		.panel-heading {
+			background: #f7b689;
+			height: 32px;
+			padding-top: 5px;
+			vertical-align: middle;
+		}
+	}
+}
+.caret{
+	margin-top: 10px;
+}
+a, a:hover, a:hover, a:link, a:active, a:visited, a:focus {
+	color: white;
+	text-decoration: none;
+}
+

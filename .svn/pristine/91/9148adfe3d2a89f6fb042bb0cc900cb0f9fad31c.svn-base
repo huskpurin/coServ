@@ -1,0 +1,37 @@
+/* Add css rules here that are valid for the whole page */
+@import "wonderful.scss";
+
+// HTML body .article{
+// 	@include scrollbar;
+// }
+body {
+	background: url("/play/bg_s.jpg") repeat;
+}
+#pgContainer {
+	@include layout(auto);
+	width: $w;
+	#pgHead {
+		width: $w;
+		height: 75px;
+		@include layout;		
+	}
+	#pgContent {
+		width: $w;
+		background-color: rgba(255, 246, 230, 0.5);	
+		@include layout;			
+	}
+	#pgFooter {
+		width: $w;
+		clear: both;		
+		height: 138px;
+		background: rgb(255, 255, 255);
+		@include layout;
+	}
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+a, a:hover, a:link, a:visited{
+  text-decoration: none;
+}

@@ -1,0 +1,18 @@
+ctrl.startup = function() {
+    // ctrl.sel('#myModal').modal('show');
+};
+
+
+function collectData()  {
+  var  pdata = { siID: ctrl.sel('select[name="siID"]').val(),
+                 fname: ctrl.sel('input[name="fname"]').val(),
+                 gender: ctrl.sel('select[name="gender"]').val(),
+                 orgName: ctrl.sel('input[name="orgName"]').val(),
+                 phone: ctrl.sel('input[name="phone"]').val(),
+                 fax: ctrl.sel('input[name="fax"]').val(),
+                 email: ctrl.sel('input[name="email"]').val(),
+                 email: ctrl.sel('input[name="addr"]').val(),
+              };
+
+  return  pdata;
+};

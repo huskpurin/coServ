@@ -1,0 +1,8 @@
+<div id="content">
+	<div class="row banner">
+	    <div id="vision_image">
+	      <img src="/play/banner.png" alt="玩美文創">
+	    </div>
+	</div>
+	<% block(); %>
+</div>

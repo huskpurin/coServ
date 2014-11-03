@@ -1,0 +1,15 @@
+// var siID = +'<%=bi.id%>'
+var token = '603b17c720a991f47907658cbb6a4ec1';
+ctrl.startup = function() {};
+
+ctrl.delete = function(siID) {
+  var params = { token: token },
+      req = { url: '/bustime/session/delete/', post: params };
+  req.url += siID;
+  __.api(req, function(data) {
+    if (data.errCode === 0) {
+      document.location = '/back/session/list';
+    } else
+      alert('error: '+JSON.stringify(data));
+  });
+};

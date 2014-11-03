@@ -1,0 +1,150 @@
+{
+    "/index": {
+        "id": "no",
+         "title": "最新消息",
+         "service": "/wdContent/news/list"
+    },
+    "/news": {
+        "id": "yes",
+         "title": "最新消息",
+         "service": "/wdContent/news/view"
+    },
+    "/info": {
+        "id": "no",
+        "title": "課程介紹"
+    },
+    "/notice": {
+        "id": "no"
+    },
+    "/warning": {
+        "id": "no"
+    },
+    "/register": {
+        "id": "no",
+        "title": "活動報名",
+        "service": "/wdContent/session/list/8077",
+        "params": {"detail": "1"}
+    },
+    "/result": {
+        "id": "no",
+        "title": "成果報導",
+        "service": "/wdContent/result/list"
+    },
+    "/contactUs": {
+        "id": "no",
+        "title": "聯絡我們"
+    },
+     "/contactInfo": {
+        "id": "no",
+        "title": "聯絡資訊"
+    },
+    "/system": {
+        "id": "yes",
+        "title": "連結報名系統",
+        "service": "/wdContent/info/view"
+
+    },
+    "/subject": {
+        "id": "yes",
+        "title": "課程簡介",
+        "service": "/wdContent/info/view"
+    },
+    "/contents": {
+        "id": "yes",
+        "title": "課程內容與大綱",
+        "service": "/wdContent/info/view"
+    },
+    "/lector": {
+        "id": "yes",
+        "title": "專業講師群",
+        "service": "/wdContent/info/view"
+    },
+    "/apply": {
+        "id": "yes",
+        "title": "報名須知",
+        "service": "/wdContent/info/view"
+    },
+    "/money": {
+        "id": "yes",
+        "title": "保證金說明",
+        "service": "/wdContent/info/view"
+    },
+    "/back/login": {
+        "id": "no"
+    },
+    "/back/news/list": {
+        "id": "no",
+        "title": "後台管理 - 最新消息",
+        "service": "/wdContent/news/list"
+    },
+    "/back/news/info": {
+        "id": "yes",
+        "service": "/wdContent/news/edit"
+    },
+    "/back/news/editor": {
+        "id": "yes",
+        "service": "/wdContent/news/edit",
+        "params": {"att": "1", "pic": "1", "icon": "1"}
+    },
+    "/back/info/list": {
+        "id": "no",
+        "title": "後台管理 - 課程介紹",
+        "service": "/wdContent/info/list"
+    },
+    "/back/info/info": {
+        "id": "yes",
+        "service": "/wdContent/info/edit"
+    },
+    "/back/info/editor": {
+        "id": "yes",
+        "service": "/wdContent/info/edit",
+        "params": {"att": "1", "pic": "1", "icon": "1"}
+    },
+    "/back/result/list": {
+        "id": "no",
+        "title": "後台管理 - 成果報導",
+        "service": "/wdContent/result/list"
+    },
+    "/back/result/info": {
+        "id": "yes",
+        "service": "/wdContent/result/edit"
+    },
+    "/back/result/editor": {
+        "id": "yes",
+        "service": "/wdContent/result/edit",
+        "params": {"att": "1", "pic": "1", "icon": "1"}
+    },
+    "/back/session/list": {
+        "id": "no",
+        "title": "後台管理 - 場次",
+        "service": "/wdContent/session/list/8077",
+        "params": {"detail": "1"}
+    },
+    "/back/session/info": {
+        "id": "yes",
+        "service": "/wdContent/session/info",
+        "params": {"detail": "1"}
+    },
+    "/back/attendee/list": {
+        "id": "yes",
+        "title": "後台管理 - 報名者",
+        "service": "/wdContent/attendee/list"
+    },
+    "/back/attendee/info": {
+        "id": "no"
+    },
+    "/back/attendee/detail": {
+        "id": "yes",
+        "title": "報名詳細清單",
+        "service": "/wdContent/attendee/list"
+    },
+    "/images": {
+        "id": "yes",
+        "args": ["path"],
+        "service": "/cms/att/node"
+    },
+    "/register2": {
+        "id": "no",
+        "title": "活動報名"
+    }
+}

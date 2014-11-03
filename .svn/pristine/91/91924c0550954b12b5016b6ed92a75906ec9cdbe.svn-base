@@ -1,0 +1,86 @@
+@import "wonderful.scss";
+
+.repager {	
+	position: relative;	
+	.title{	
+		@include title;
+	}
+	.article {
+		@include article;
+
+		.section{
+			@include section;
+			h4{
+				width: 155px;
+			}
+			.table {
+				float: right;
+				width: 715px;
+				margin-top: -30px;
+				th {
+					background: #c8c0b3;
+					@include textC;
+					padding: 5px;
+				}
+				tr:nth-child(5),
+				tr:nth-child(10) {
+					background: #eaded0;
+				}				
+				td {
+					@include td;				
+				}
+				td:last-child {
+					border-right: none;
+				}
+			}
+			#regForm {				
+				width: 715px;
+				margin-top: 2em;
+			}
+		}
+	}
+}
+
+.clear {
+	@include clear;
+}
+.fcO {
+	color: #f1894a;
+}
+.fcG {
+	color: #ccc;
+}
+.borderB {
+	border-bottom: 1px #ccc solid;
+}
+.boline {  
+  background-color: transparent;
+  border: none !important;
+  border-bottom: 1px solid #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: 0;
+}
+.maT {
+	margin-top: 50px;
+}
+.pa{
+	padding-left: 0;
+	padding-right: 0;
+}
+.modal-dialog {
+	width: 1024px;
+}
+.control-label {
+	vertical-align: middle;
+}
+.form-control {
+	vertical-align: middle;
+}
+.arrow {
+	float: right;
+	cursor: pointer;
+	margin-top: -15px;
+}
+.dropmenu {
+	display: none;
+}

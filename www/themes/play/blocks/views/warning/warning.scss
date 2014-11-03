@@ -1,0 +1,31 @@
+@import "wonderful.scss";
+
+.modal-header {
+  width: $w;
+  color: #fff;  
+  background-color: $fc4;
+  border-color: #eea236;
+  padding: 5px;
+  @include fwY;
+}
+// .modal-title {
+// 	letter-spacing: 2.5em;
+// }
+.modal-body {
+	padding: 0px 35px 5px;
+	margin-top: 15px;
+	color: $fc1;
+	font-size: 12px;	
+	line-height: $fs1 * 2;
+	font-weight: bolder;
+	ul li {
+		list-style-type: none;
+		// list-style-type:initial; 		
+	}
+	ul li:before {
+		content:"◆";
+	}	
+}
+.clear {
+	@include clear;
+}

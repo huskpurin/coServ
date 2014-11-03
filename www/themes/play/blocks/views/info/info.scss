@@ -1,0 +1,21 @@
+@import "wonderful.scss";
+
+.infopager {
+	@include page;
+	.title{
+		@include title;
+	}		
+	.article {
+		@include article1;
+
+		.section{
+			@include section;
+		}
+		.section:last-child {
+			@include nobor;
+		}
+	}
+}
+.clear {
+	@include clear;
+}

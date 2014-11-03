@@ -1,0 +1,110 @@
+@import "coserv.scss";
+@include link;
+
+#header {
+  @include wrapper;
+  background: rgba(222, 222, 222, 0.95);
+  height: 52px; 
+  .icon-bar {
+    background: #999;
+  }
+  .github {
+    @include github;
+  }
+  //menu 
+  .navbar-nav.navbar-right:last-child {
+    margin-right: $fs1 * 2;  
+    li.bu {
+      @include float; 
+      padding: 0 30px;
+      margin: 0;
+      text-align: center;
+      font-family: $ff1;
+      color: $fc1;
+      font-size: $fs1 * 1.2;
+      display: inline-block; 
+      position: relative;       
+      line-height: 48px; 
+      &:active, &:hover, &:focus, &:visited, &.active { 
+        @include bolder(4px, solid, #599CCE);
+        .arrow {
+          width: 0px;
+          height: 0px;
+          border-width: 8px;
+          border-style: solid;
+          border-color: transparent transparent #599CCE transparent ;
+          position: absolute;
+          top: $w1 - +30%;
+          left: $w1 - +58%;
+        }
+      } 
+    }   
+    //language
+    .dropdown {
+      // @include float(right);      
+      &:hover a {
+        background: transparent;  
+      }
+      .dropdown-toggle {
+        width: 110px;
+        display: block;
+        text-align: center; 
+        margin: 0;
+        line-height: 19px;
+        color: $fc1;
+        background: transparent;
+        border: none;
+      }
+      .dropdown-menu {
+        width: 120px;
+        min-width: 120px;
+        max-width: 120px;        
+        background: #599CCE;
+        border: none;
+        box-shadow: none;
+        text-align: center;
+        @include ma;
+        @include pa(0px, 0px);
+        z-index: 1001;
+        // right: -10px;        
+        a {
+          padding: 5px 15px;
+          line-height: 24px;
+          font-size: 16px;
+          color: #fff;
+          &:hover, &:focus {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    //dropdown-menu onclick li staus
+    .navbar-nav > .open .dropdown {
+      background: transparent; 
+    }      
+    .navbar-nav > .open  > a {
+      background: transparent; 
+      &:hover, &:focus, &:active, &:visited {
+        background: transparent;
+      }
+    }        
+  } 
+}
+
+
+@media screen and (max-width: 844px) {  
+  #header {
+    height: 55px;
+  }
+  .navbar-nav {
+    float: right;
+  }
+  .collapse {
+    background: rgba(219,219,219,0.9);
+    height: 70px;
+    overflow: hidden;
+  }
+  .dropdown-menu {
+    z-index: 1001;
+  }
+}

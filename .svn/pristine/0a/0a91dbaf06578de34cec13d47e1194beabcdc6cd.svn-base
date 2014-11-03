@@ -1,0 +1,41 @@
+<% regData = bi.query %>
+<div class="modal-header text-center">
+  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+  <h4 class="modal-title">報名完成通知</h4>
+</div>
+<div class="modal-body">
+  <p>
+    您好：
+  </p>
+  <p>
+    感謝您報名「文創產業智財權保護及加值應用工作營」，您的報名資料如下:
+  </p>
+  <div class="spIDnInfo">
+    報名梯次：
+    <span class="badge"><%=regData.siTitle%></span> |
+    <span><%=regData.siSum%></span> |
+    <span>時間：<%=regData.siPeriod%></span> |
+    <span>地點：<%=regData.siPlace%></span>
+  </div>
+  <div class="attendeeInfo">
+    <p>姓名：<%=regData.fname%></p>
+    <p>性別：<% if (regData.gender < 1 ){%>男<%}else{%>女<%}%></p>
+    <p>公司名稱：<%=regData.orgName%></p>
+    <!-- -->
+    <p>公司設立年份：2013年</p>
+    <p>產業類別：服務業</p>
+    <p>產品/營業項目簡述：文創商品</p>
+    <p>職稱：設計師</p>
+    <!-- -->
+    <p>聯絡電話：<%=regData.phone%></p>
+    <p>傳真：<%=regData.fax%></p>
+    <p>E-mail：<%=regData.email%></p>
+    <p>聯絡地址：<%=regData.addr%></p>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="text-center">
+    <button type="button" class="btn btn-warning" data-dismiss="modal" onclick="<%=ctrl%>.sumbit()">確認送出</button>
+    <button type="button" class="btn btn-warning" data-dismiss="modal">回前頁修改</button>
+  </div>
+</div>

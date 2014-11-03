@@ -1,0 +1,24 @@
+@import "wonderful.scss";
+
+.infopager {
+	position: relative;
+	.title{
+		@include title;
+	}
+
+		@include scrollbar;
+		.article {
+			@include article1;
+
+			.section{
+				@include section;
+			}
+			.section:last-child {
+				@include nobor;
+			}
+		}
+
+}
+.clear {
+	@include clear;
+}

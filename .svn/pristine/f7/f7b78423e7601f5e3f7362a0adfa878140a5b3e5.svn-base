@@ -1,0 +1,27 @@
+<% var url = bi.uri %>
+<div id="header" class="col-md-12">
+  <div class="row">
+    <div id="home" class="col-md-5 col-md-offset-1">
+      <a href="/"><img src="/play/home.png" alt="回首頁"></a>
+    </div>
+    <div id="nav" class="col-md-6 pull-right">
+      <ul>
+        <!-- 最新消息 -->
+        <li><a href="/" class="m1 <% if (url =='/index') {%>active<%}%>"><img src="/play/news-1.png" alt=""></a></li>
+        <!-- 課程介紹 -->
+        <li><a href="/info" class="m2 <% if (url =='/info') {%>active<%}%>"><img src="/play/content-1.png" alt=""></a></li>
+        <!-- 成果報導 -->
+        <li><a href="/result" class="m3 <% if (url =='/result') {%>active<%}%>"><img src="/play/result-1.png" alt=""></a></li>
+        <!-- 活動報名 -->
+        <li><a href="/register" class="m4 <% if (url =='/register') {%>active<%}%>"><img src="/play/register-1.png" alt=""></a></li>
+        <!-- 聯絡我們 -->
+        <li><a href="/contactUs" class="m5 <% if (url =='/contactUs') {%>active<%}%>"><img src="/play/contact-1.png" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div id="vision_image">
+      <img src="/play/banner.png" alt="玩美文創">
+    </div>
+  </div> -->
+</div>

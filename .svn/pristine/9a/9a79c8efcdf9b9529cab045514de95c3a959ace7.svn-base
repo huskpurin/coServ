@@ -1,0 +1,26 @@
+<div id="header" class="col-md-12">
+  <div class="row">
+    <div id="home" class="col-md-5">
+      <a href="/"><img src="/play/home.png" alt="回首頁"></a>
+    </div>
+    <div id="nav" class="col-md-7 pull-right">
+      <ul>
+        <!-- 最新消息 -->
+        <li><a href="/"><img src="/play/news_n.png" alt=""></a></li>
+        <!-- 課程介紹 -->
+        <li><a href="/info"><img src="/play/subject_n.png" alt=""></a></li>
+        <!-- 成果報導 -->
+        <li><a href="/result"><img src="/play/result_n.png" alt=""></a></li>
+        <!-- 活動報名 -->
+        <li><a href="/register"><img src="/play/apply_n.png" alt=""></a></li>
+        <!-- 聯絡我們 -->
+        <li><a href="/contactUs"><img src="/play/contact_n.png" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div id="vision_image">
+      <img src="/play/banner.png" alt="玩美文創">
+    </div>
+  </div> -->
+</div>

@@ -1,0 +1,16 @@
+// var siID = +'<%=bi.id%>'
+var token = '603b17c720a991f47907658cbb6a4ec1';
+ctrl.startup = function() {};
+
+ctrl.cancel = function(siID, regCode) {
+  // alert('siID:'+siID+'\nregCode:'+regCode);
+  var params = { regCode: regCode, token: token },
+      req = { url: '/bustime/attendee/cancel/', post: params };
+  req.url += siID;
+  __.api(req, function(data) {
+    if (data.errCode === 0) {
+      document.location = '<%=bi.uri%>?token=' + token;
+    } else
+      alert('error: '+JSON.stringify(data));
+  });
+};

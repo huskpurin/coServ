@@ -1,0 +1,34 @@
+@import "wonderful.scss";
+
+@mixin subjectInner{
+	@include float;
+	-webkit-padding-start: 25px;
+	li {	
+	line-height: 24px;
+	font-size: $fs1;
+	}
+}
+
+h4{
+	width: $w *0.18;
+	@include float;
+}
+.wc27 {
+	width: $w *0.40;
+	@include subjectInner;	
+}
+.wc32 {
+	width: $w *0.42;
+	@include subjectInner;	
+}
+.va {
+	width: $w *0.43;
+	@include subjectInner;
+	vertical-align: bottom;
+	margin-bottom: 0px;
+	margin-left: -20px;
+	margin-top: 170px;
+}
+.clear {
+	@include clear;
+}

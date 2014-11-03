@@ -1,0 +1,7 @@
+{
+	"apiEngine": {
+		"host": "skinapi.com",
+		"port": 80,
+		"method": "POST"
+	}
+}

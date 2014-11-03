@@ -1,0 +1,125 @@
+{
+    "/index": {
+        "id": "no",
+         "title": "最新消息",
+         "service": "/bustime/news/list"
+    },
+    "/info": {
+        "id": "no",
+        "title": "課程介紹"
+    },
+    "/notice": {
+        "id": "no"
+    },
+    "/warning": {
+        "id": "no"
+    },
+    "/register": {
+        "id": "no",
+        "title": "活動報名",
+        "service": "/bustime/session/list/3232",
+        "params": {"detail": "1"}
+    },
+    "/result": {
+        "id": "no",
+        "title": "成果報導"
+    },
+    "/contactUs": {
+        "id": "no",
+        "title": "聯絡我們"
+    },
+     "/contactInfo": {
+        "id": "no",
+        "title": "聯絡資訊"
+    },
+    "/system": {
+        "id": "yes",
+        "title": "連結報名系統",
+        "service": "/bustime/info/view"
+
+    },
+    "/subject": {
+        "id": "yes",
+        "title": "課程簡介",
+        "service": "/bustime/info/view"
+    },
+    "/contents": {
+        "id": "yes",
+        "title": "課程內容與大綱",
+        "service": "/bustime/info/view"
+    },
+    "/lector": {
+        "id": "yes",
+        "title": "專業講師群",
+        "service": "/bustime/info/view"
+    },
+    "/apply": {
+        "id": "yes",
+        "title": "報名須知",
+        "service": "/bustime/info/view"
+    },
+    "/money": {
+        "id": "yes",
+        "title": "保證金說明",
+        "service": "/bustime/info/view"
+    },
+    "/back/login": {
+        "id": "no"
+    },
+    "/back/article/list": {
+        "id": "no",
+        "title": "後台管理 - 文章",
+        "service": "/bustime/article/list"
+    },
+    "/back/article/info": {
+        "id": "yes",
+        "service": "/bustime/article/edit"
+    },
+    "/back/article/editor": {
+        "id": "yes",
+        "service": "/bustime/article/edit"
+    },
+    "/back/article/rsArticle": {
+        "id": "no",
+        "service": "/bustime/article/list"
+    },
+    "/back/article/editor": {
+        "id": "no"
+    },
+    "/back/article/addCnt": {
+        "id": "no"
+    },
+    "/back/session/list": {
+        "id": "no",
+        "title": "後台管理 - 場次",
+        "service": "/bustime/session/list/3232",
+        "params": {"detail": "1"}
+    },
+    "/back/session/info": {
+        "id": "yes",
+        "service": "/bustime/session/info",
+        "params": {"detail": "1"}
+    },
+    "/back/attendee/list": {
+        "id": "yes",
+        "title": "後台管理 - 報名者",
+        "service": "/bustime/attendee/list"
+    },
+    "/back/attendee/info": {
+        "id": "no"
+    },
+    "/back/attendee/detail": {
+        "id": "yes",
+        "title": "報名詳細清單",
+        "service": "/bustime/attendee/list"
+    },
+    "/images": {
+        "id": "yes",
+        "args": ["path"],
+        "service": "/cms/att/node"
+    },
+    "/register2": {
+        "id": "no",
+        "title": "活動報名"
+    }
+}

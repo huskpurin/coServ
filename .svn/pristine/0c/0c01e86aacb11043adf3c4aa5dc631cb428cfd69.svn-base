@@ -1,0 +1,31 @@
+<div class="subMenu" id="<%=bi.id%>">
+	
+    <ul class="sidebar-menu">
+    	<li class="manage">
+            <a href="#">                   
+                <span><%= ph.overview %></span>              
+            </a>
+        </li>        
+        <li class="mainmenu">
+            <a href="#">                     
+                <span><%= ph.subtitleAb %></span>                                
+            </a>            
+        </li>
+        <li class="mainmenu">
+            <a href="#">                     
+                <span><%= ph.subtitleAs %></span>                                
+            </a>            
+        </li>
+        <li class="mainmenu">
+            <a href="#">                     
+                <span><%= ph.subtitleIb %></span>
+            </a>
+        </li>
+        <li class="mainmenu">
+            <a href="#">                     
+                <span><%= ph.subtitleIs %></span>                
+            </a>
+        </li>        
+    </ul>
+   
+</div>

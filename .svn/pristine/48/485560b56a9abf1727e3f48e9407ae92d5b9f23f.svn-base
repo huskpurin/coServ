@@ -1,0 +1,295 @@
+<% var period = '' %>
+<div class="repager">
+  <div class="title">活動報名 <span>Registration System</span></div>   
+
+    <div class="article">
+      <div class="section">
+        <h4><strong>報名梯次</strong></h4>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>梯次</th>
+              <th>日期</th>
+              <th>時間</th>
+              <th>區域</th>
+              <th>場次</th>
+              <th>報名狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 測試資料
+            <tr>
+              <td class="text-center">1</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">2</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">3</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">4</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td src="/play/bu.png"></td>
+            </tr>
+            <tr>
+              <td class="text-center">5</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">6</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">7</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">8</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">9</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr>
+            <tr>
+              <td class="text-center">10</td>
+              <td>8/2(六)-8/3(日)、8/9(六)-8/10(日)</td>
+              <td>09:00 - 17:45</td>
+              <td>北部</td>
+              <td>台北市</td>
+              <td>尚未開放報名</td>
+            </tr> -->
+
+            <% if (value && value.list.length > 0) {
+               value.list.reverse().forEach(function(item) {
+                 function date(target) {
+                   var t = new Date(item[target]);
+                   var time = t.toLocaleTimeString().substring(0, 5);
+                   var rtn = t.getFullYear() +'-'+ ('0'+(t.getMonth()+1)).slice(-2) +'-'+ ('0'+t.getDate()).slice(-2) + ' ' + time;
+                   return rtn;
+                 }
+
+                 var sTime = new Date(item.fromTime),
+                     eTime = new Date(item.toTime),
+
+                     onTime = new Date(item.regFromTm),
+                     offTime = new Date(item.regToTm),
+                     now = new Date();
+                  period = sTime.getHours() + ":" + sTime.getMinutes() + "-" + eTime.getHours() + ":" + eTime.getMinutes("mm");
+                  period = date('fromTime').substring(11, 16) + ' - ' + date('toTime').substring(11, 16)
+            %>
+            <tr>
+              <td><%= item.doc.title %></td>
+              <td><%= item.doc.summary %></td>
+              <td><%= period %></td>
+              <td><%= item.addr %></td>
+              <td onTime="<%=item.regFromTm%>" on="<%=(now < onTime)%>" off="<%=(offTime < now)%>"><%= item.place %></td>
+              <td>
+                <% if (now < onTime) { %>
+                尚未開放報名
+                <%} else if (offTime < now) {%>
+                <span class="fcG">停止報名</span>
+                <%} else {%>
+                <span class="fcO reg">我要報名</span>
+                <a href="#"><img src="play/bu.png" alt="我要報名" onclick="<%=ctrl%>.fillSession('<%=item.siID%>');"></a>
+                <%}%>
+              </td>
+            </tr>
+
+            <% });
+             } %>
+
+          </tbody>
+        </table>
+        <div class="clear"></div>
+      </div>
+
+      <div class="section">
+          <img src="play/arrow.png" alt="展開收合" class="arrow" onclick="$('.dropmenu').toggle(500);">
+            <!-- 報名資料開始 -->
+            <div class="dropmenu" style="display:none">
+              <h4>報名資料</h4>
+              <form id="regForm form-horizontal" role="form">
+                <div class="form-group col-md-5">
+                  <label for="siID" class="control-label col-md-3 pa">報名梯次：</label>
+                  <div class="col-md-9 pa">
+                    <select id="siID" class="form-control pa" name="siID">
+                      <%
+                      if (value && value.list.length > 0) {
+                        value.list.forEach(function(item) {
+                          var onTime = new Date(item.regFromTm),
+                              offTime = new Date(item.regToTm),
+                              now = new Date(),
+                              open = (onTime < now && now < offTime) ? true : false;
+                          if (open) {
+                      %>
+                      <option value="<%=item.siID%>" siSum="<%= item.doc.summary %>" siPeriod="<%=period%>" siPlace="<%= item.place %>" siTitle="<%=item.doc.title%>">第<%=item.doc.title%>梯 <%= item.place %></option>
+                      <%  }
+                        });
+                      } %>
+                    </select>
+                  </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="form-group col-md-3">
+                    <label for="fname" class="control-label col-md-3 pa">姓名：</label>
+                    <div class="col-md-9 pa borderB">
+                      <input class="form-control boline" name="fname" id="fname" value="">
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="gender" class="control-label col-md-3 pa">性別：</label>
+                    <div class="col-md-9">
+                      <select id="gender" name="gender" class="form-control pa">
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                        <!-- <option value="2">--</option> -->
+                      </select>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="form-group col-md-5">
+                    <label for="orgName" class="control-label col-md-3 pa">公司名稱：</label>
+                    <div class="col-md-9 pa borderB">
+                      <input type="input" class="form-control boline" name="orgName" id="orgName" value="">
+                    </div>
+                </div>
+                <div class="form-group col-md-5 col-md-offset-1">
+                    <label for="orgYear" class="control-label col-md-5 pa">公司設立年份：</label>
+                    <div class="col-md-7">
+                      <select id="orgYear" name="orgYear" class="form-control pa">
+                        <option value="1980前">1980前</option>
+                        <% for (var i = 1980; i < 2014; i++) { %>
+                        <option value="<%=i%>"><%=i%>年</option>
+                        <% } %>
+                      </select>
+                    </div>
+                </div>
+                <div class="clear"></div>
+
+                <div class="form-group col-md-5">
+                    <label for="orgType" class="control-label col-md-3 pa">產業類別：</label>
+                    <div class="col-md-9">
+                      <select id="orgType" name="orgType" class="form-control pa">
+                        <option value="視覺藝術產業">1-視覺藝術產業</option>
+                        <option value="音樂及表演">2-音樂及表演</option>
+                        <option value="文化資產應用">3-文化資產應用</option>
+                        <option value="工藝產業">4-工藝產業</option>
+                        <option value="電影產業">5-電影產業</option>
+                        <option value="廣播電視產業">6-廣播電視產業</option>
+                        <option value="出版產業">7-出版產業</option>
+                        <option value="廣告產業">8-廣告產業</option>
+                        <option value="產品設計產業">9-產品設計產業</option>
+                        <option value="視覺傳達設計產業">10-視覺傳達設計產業</option>
+                        <option value="設計品牌時尚產業">11-設計品牌時尚產業</option>
+                        <option value="建築設計產業">12-建築設計產業</option>
+                        <option value="數位內容">13-數位內容</option>
+                        <option value="創意生活產業">14-創意生活產業</option>
+                        <option value="流行音樂及文化內容產業">15-流行音樂及文化內容產業</option>
+                        <option value="其他">16-其他</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-5 col-md-offset-1">
+                    <label for="product" class="control-label col-md-6 pa">產品/營業項目簡述：</label>
+                    <div class="col-md-6 pa borderB">
+                      <input type="input" class="form-control boline" name="product" id="product" value="">
+                    </div>
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="jobTitle" class="control-label col-md-2 pa">職稱：</label>
+                    <div class="col-md-10 pa borderB">
+                      <input type="input" class="form-control boline" name="jobTitle" id="jobTitle" value="">
+                    </div>
+                </div>
+               <div class="clear"></div>
+
+                <div class="form-group col-md-5">
+                    <label for="phone" class="control-label col-md-3 pa">連絡電話：</label>
+                    <div class="col-md-9 pa borderB">
+                      <input type="input" class="form-control boline" name="phone" id="phone" value="">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="fax" class="control-label col-md-3 pa">傳真：</label>
+                    <div class="col-md-9 pa borderB">
+                      <input type="input" class="form-control boline" name="fax" id="fax" value="">
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+                  <div class="form-group col-md-9">
+                    <label for="email" class="control-label col-md-2 pa">E-mail：</label>
+                    <div class="col-md-10 pa borderB">
+                      <input type="email" class="form-control boline" name="email" id="email" value="" required>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-9">
+                    <label for="addr" class="control-label col-md-2 pa">連絡地址：</label>
+                    <div class="col-md-10 pa borderB">
+                      <input type="input" class="form-control boline" name="addr" id="addr" value="">
+                    </div>
+                  </div>
+                  <div class="clear"></div>
+
+                  <div class="form-group col-md-12 row maT text-center">
+                      <!-- <button type="button" class="btn btn-warning" onclick="<%=ctrl%>.regist()">送出</button>-->
+                      <a href="#"><img src="play/sendBu.png" alt="送出" onclick="<%=ctrl%>.regist()"></a>
+                      <a href="#"><img src="play/updateBu.png" alt="修改"></a>
+                  </div>
+              </form>
+            </div>
+      </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <% block('/warning'); %>
+      <!-- 測試時，'/warning'可改成'/notice') -->
+    </div>
+  </div>
+</div>

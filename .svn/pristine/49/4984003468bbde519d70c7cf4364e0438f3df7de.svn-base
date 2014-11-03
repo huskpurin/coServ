@@ -1,0 +1,25 @@
+@import "wonderful.scss";
+
+
+img {
+	@include newsimg;
+}
+p {
+	@include p;
+	.warn {
+		@include warn;
+		.more {	
+			margin-top: 10px;						
+			float: right;			
+			color: #555859;
+			display: block;	
+			&:hover {
+				text-decoration: none;
+			}			
+		}
+	}
+
+}	
+
+
+

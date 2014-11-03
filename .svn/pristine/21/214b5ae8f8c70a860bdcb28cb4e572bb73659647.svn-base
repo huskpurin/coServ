@@ -1,0 +1,35 @@
+/* Add css rules here that are valid for the whole page */
+@import "wonderful.scss";
+
+#pgContainer {
+	margin: 0 auto;
+	padding: 0;
+	width: $960;
+	font-family: $ff3;
+	background-color: rgba(255,255,255,0.8);
+	background: url("/play/bg.jpg") repeat-y;
+	#pgHead {
+		height: 75px;
+		width: $w;
+		margin: 0;
+		padding: 0;		
+	}
+	#pgContent {
+		min-height: 600px;
+		margin: 0;
+		padding: 0;
+		background-color: rgba(255, 246, 230, 0.5);		
+	}
+	#pgFooter {
+		clear: both;
+		width: $w;
+		height: 138px;
+		background: #FFF;
+		margin: 0;
+		padding: 0;
+	}
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}

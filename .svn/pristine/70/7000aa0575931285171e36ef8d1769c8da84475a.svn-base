@@ -1,0 +1,105 @@
+@import "wonderful.scss";
+
+.repager {
+	@include page;
+	.title{
+		@include title;
+	}
+	.article {
+		@include article1;
+		.section{
+			@include section;
+			h4{
+				width: 155px;
+			}
+			.inner {
+				margin-top: 20px;
+				.row {					
+					div:first-child {						
+					}
+					div:last-child {
+						border-right: none;						
+					}
+					div {
+						@include textC;
+					}
+				}
+				.row:first-child {
+					background: #c8c0b3;
+					margin-top: -10px;
+					margin-bottom: -10px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+				.row:last-child {
+					div.wc100 {
+						border-bottom: none!important;
+					}					
+				}
+				.row:nth-child(5), .row:nth-child(9), 
+				.row:nth-child(13), .row:nth-child(17),
+				.row:nth-child(21) {
+					background: #eaded0;
+					margin-top: -10px;
+					margin-bottom: -10px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+			}				
+		
+			#regForm {
+				width: 715px;
+				margin-top: 2em;
+				padding-bottom: 2em;
+			}
+		}
+		.section:last-child {
+			@include nobor;
+		}
+	}
+}
+
+.clear {
+	@include clear;
+}
+.fcO {
+	color: #f1894a;
+}
+.fcG {
+	color: #bbb;
+}
+.borderB {
+	border-bottom: 1px #ccc solid;
+}
+.boline {
+  background-color: transparent;
+  border: none !important;
+  border-bottom: 1px solid #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: 0;
+}
+.maT {
+	margin-top: 50px;
+}
+.pa{
+	padding-left: 0;
+	padding-right: 0;
+}
+.control-label {
+	vertical-align: middle;
+}
+.form-control {
+	vertical-align: middle;
+}
+.arrow {
+	float: right;
+	cursor: pointer;
+	margin-top: -20px;
+}
+
+.modal-dialog {
+	.modal-content{
+		width: 690px;		
+		background: url("play/mo2_bg.png") repeat-y -2px 0px;		
+	}
+}

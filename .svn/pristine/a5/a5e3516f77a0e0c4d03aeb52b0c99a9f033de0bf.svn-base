@@ -1,0 +1,15 @@
+@import "wonderful.scss";
+@import "scrollbar.scss";
+
+.contactpager {		
+	position: relative;	
+	.title{	
+		@include title;
+	}
+	.article {
+		@include article(hidden, 260px, 910px);
+	}
+}
+.clear {
+	@include clear;
+}

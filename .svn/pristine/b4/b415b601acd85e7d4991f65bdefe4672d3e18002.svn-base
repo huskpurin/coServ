@@ -1,0 +1,40 @@
+<% regData = bi.query %>
+<div class="modal-header text-center" style="background: #ff8439;">
+  <button type="button" class="close" data-dismiss="modal">
+    <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+  </button>
+  <h3 class="modal-title"><img src="/play/notice.png" alt="報名完成通知"></h3>
+</div>
+<div class="modal-body">
+  <p class="text-center">
+    您好：感謝您報名「文創產業智財權保護及加值應用工作營」，您的報名資料如下：
+  </p>
+ <div class="spIDnInfo text-center">
+    <span>報名梯次：</span>
+    <span class="badge"><%=regData.siTitle%></span>
+    <span><%=regData.siSum%></span>
+    <span class="oline"><i class="glyphicon glyphicon-play"></i></span>
+    <span>時間：<%=regData.siPeriod%></span>
+    <span class="oline"><i class="glyphicon glyphicon-play"></i></span>
+    <span>地點：<%=regData.siPlace%></span>
+  </div>
+  <div class="attendeeInfo">
+    <p><span class="fieldName">姓名：</span><%=regData.fname%></p>
+    <p><span class="fieldName">性別：</span><% if (regData.gender < 1 ){%>男<%}else{%>女<%}%></p>
+    <p><span class="fieldName">公司名稱：</span><%=regData.orgName%></p>
+    <p><span class="fieldName">公司設立年份：</span><%=regData.json.orgYear%></p>
+    <p><span class="fieldName">產業類別：</span><%=regData.json.orgType%></p>
+    <p><span class="fieldName">產品/營業項目簡述：</span><%=regData.json.product%></p>
+    <p><span class="fieldName">職稱：</span><%=regData.jobTitle%></p>
+    <p><span class="fieldName">聯絡電話：</span><%=regData.phone%></p>
+    <p><span class="fieldName">傳真：</span><%=regData.fax%></p>
+    <p><span class="fieldName">E-mail：</span><%=regData.email%></p>
+    <p><span class="fieldName">聯絡地址：</span><%=regData.addr%></p>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="text-center">
+  	<a href="#"><img src="play/md_sendBu.png" alt="確認送出" onclick="<%=ctrl%>.sumbit()"></a>
+  	<a href="#" data-dismiss="modal"><img src="play/md_updateBu.png" alt="回前頁修改"></a>
+  </div>
+</div>

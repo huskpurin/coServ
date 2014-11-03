@@ -1,0 +1,16 @@
+@import "wonderful.scss";
+
+.wc30 {
+	width: $w / 3;
+	float: $float;
+	li {
+	margin-top: 20px;			
+	}
+}
+.va {
+	float: $float;
+	vertical-align: bottom;
+}
+.clear {
+	@include clear;
+}

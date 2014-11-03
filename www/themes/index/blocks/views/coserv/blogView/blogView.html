@@ -1,0 +1,99 @@
+<div class="article">		
+		<div class="title">
+			<h1>File Structure</h1>
+			<h3>By knowing how coServ organizing files can effective improve your web development proficiency.</h3>
+		</div>
+		<div class="sub">					
+			<span class="strTime">2014-07-10&nbsp;/&nbsp;</span>
+			<span class="dspName">Author：Author：Ben L</span>
+		</div>
+		<div class="section">
+
+				<p>A single coServ server can host multiple websites, and files of websites are all stored under the 'www' directory. Take a look at the 'www' directory, you should find three items as:</p>
+
+				<pre><code>
+	www
+	 +-- [cont]
+	 +-- [themes]
+	 +-- sites.json
+				</code></pre>
+
+				<p>Static contents such as images, commonly used Javascript libraries and css files are stored in the 'cont' directory. The 'themes' directory contains web design files for each website, and the 'sites.json' file carries some basic information about every website hosted on a coServ server.</p>
+
+				<p class="subtitle"></p>
+				<h3>The 'sites.json' File</h3>
+				<p></p>
+
+				<p>Below is a sample of 'sites.json':</p>
+
+				<pre><code>
+	{
+	   "www.foo.com" : {"caCode": "index",
+	                              "title": "The Official Website of XXX",
+	                              "validFrom": "",
+	                              "validTo":"",
+	                              "locale": "en",
+	                              "home": "/index"
+	           }
+	}
+				</code></pre>
+
+				<p>For every website hosted on coServ, there is an entry in the 'sites.json' file. The key of every entry is the domain name of each website. coServ uses those key names to decide which incoming request goes to which website. The 'caCode' property will be matched to a directory under the 'themes' directory which we'll talk about later.</p>
+
+				<p class="subtitle"></p>
+				<h3>The 'themes' Directory</h3>
+				<p></p>
+
+				<p>The 'themes' directory would look something like the following:</p>
+
+				<pre><code>
+	themes
+	  +-- [site_A]
+	  +-- [site_B]
+	  +-- ...
+	  +-- [shared]
+				</code></pre>
+
+				<p>Every website hosted on coServ will have a sub-directory under the 'themes' directory. The sub-directory name should match the 'caCode' property specified in the sites.json file. The 'shared' directory is not for a particular website. It contains design files of 'blocks' which can be used by all websites. </p>
+
+				<h4>Website Directories</h4>
+
+				<p>Now it's time to look at the website directories under the 'themes' directory. Below is a simplified diagram showing what are inside a website directory:</p>
+
+				<pre><code>
+	themes
+	  +-- [site_A]
+	    +-- [blocks]
+	      +-- [modules]
+	      +-- [views]
+	    +-- [layout]
+	      +-- [default]
+	      +-- [more_layout]
+	    +-- layoutMap.json
+	    +-- siteURI.json
+				</code></pre>
+
+				<p>The 'blocks' directory contains design files for every block used in a website. The so-called 'design files' are node.js modules which implements the model part of a block, and a bundle of HTML, CSS, Javascript, and other files to make up the view and controller of a block. They are store in the 'modules' and 'views' directories respectively.</p>
+
+				<p>The 'layout' directory contains the page layout design files. There will be at least a 'default' subdirectory below it, because every website should at least have a layout scheme and that is named as 'default'. It's possible (and quite common) to have multiple layout schemes for a website, and each layout scheme should have its own directory under the 'layout' directory.</p>
+
+				<p>The 'layoutMap.json' file describes what page layout will be applied for each page, and finally the 'siteURI.json' file describes all the valid web addresses of a website.</p>
+
+				<p class="subtitle"></p>
+				<h3>The 'cont' Directory</h3>
+				<p></p>
+
+				<p>Structures of the 'cont' directory is similar to the 'themes' directory. It also consists of a 'shared' directory and dedicated directories for each website. </p>
+
+		</div>
+			
+</div>
+
+<div class="down" ><!-- style="visibility:hidden" -->
+	<div class="pagination">
+		<span class="disabled">Prev</span>
+		<!-- <a class="" rel="prev start" href="#">Prev</a> -->
+		<a class="" rel="next" href="#">Next</a>	
+		<!-- <span class="disabled">Next</span> -->	
+	</div>
+</div>

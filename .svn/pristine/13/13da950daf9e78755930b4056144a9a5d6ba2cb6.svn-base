@@ -1,0 +1,41 @@
+/* Add css rules here that are valid for the whole page */
+@import "wonderful.scss";
+
+// HTML body .article{
+// 	@include scrollbar;
+// }
+body {
+	background: url("/play/bg_s.jpg") repeat;
+}
+#pgContainer {
+	width: 100%;
+	@include layout(auto);
+	overflow-x: hidden;
+	#pgHead {
+		height: 75px;
+		@include layout;
+		overflow-x: hidden;
+
+	}
+	#pgContent {
+		// background-color: rgba(216, 201, 170, 0.2);
+		background-color: rgba(235, 209, 183, 0.2);
+		@include layout;
+		overflow-x: hidden;
+
+	}
+	#pgFooter {
+		clear: both;
+		height: 138px;
+		background: rgb(255, 255, 255);
+		@include layout;
+		overflow-x: hidden;
+	}
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+a, a:hover, a:link, a:visited{
+  text-decoration: none;
+}

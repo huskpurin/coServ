@@ -1,0 +1,48 @@
+@import "coserv.scss";
+@mixin title {
+	margin: 1em 2em;
+	text-align: center;
+	height: 22px;
+	font-family: $ff1;		
+}
+@mixin titleTx{
+	font-size: 1em;
+	font-weight: bolder;
+	padding: 0 20px;
+	font-family: $ff1;	
+}
+@mixin docTx {	
+	padding: 2px 1em 1em;
+	margin: 0;
+	font-size: $fs1 * 1.2;
+	line-height: $fs1 * 1.8;
+	text-indent: $fs1 * 2;
+	font-family: $ff1;
+}
+
+.content {
+	@include content;
+	.inner {
+		margin: 3em auto;
+		padding: 5px 50px 30px;
+		background: #599CCE;
+		color: #fff;
+		-webkit-border-radius: 10px;
+	    -moz-border-radius: 10px;
+	    -o-border-radius: 10px;
+	    -ms-border-radius: 10px;
+	    border-radius: 10px;	
+		h1 {
+			@include title;
+			span {
+				@include titleTx;
+			}
+		}
+		p {
+			@include docTx;
+		}
+		p + p {
+			margin-top: -10px;
+		}
+	}
+}

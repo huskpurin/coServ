@@ -1,0 +1,114 @@
+@import "wonderful.scss";
+@import "scrollbar.scss";
+
+.repager {
+	position: relative;
+	.title{
+		@include title;
+	}
+	.article {
+		@include article1;
+		.section{
+			@include section;
+			h4{
+				width: 155px;
+			}
+			.table {
+				float: right;
+				width: 715px;
+				margin-top: -30px;
+				border-collapse: separate;
+				border-spacing: 0 20px;
+				thead {
+					tr {
+						th {
+						background: #c8c0b3;
+						@include textC;
+						padding: 5px;
+						}
+					}
+				}
+				tbody {
+					tr{
+						border-bottom: 1px solid #ddd;
+						/*display: inline-table;*/
+						display: run-in;
+						td {
+							@include td;
+						}
+						td:first-child {
+							@include textC;
+						}
+						td:last-child {
+							border-right: none;
+							@include textC;
+						}
+					}
+					tr:nth-child(5),
+					tr:nth-child(10) {
+						background: #eaded0;
+					}
+					td {
+						@include td;
+					}
+					td:last-child {
+						border-right: none;
+					}
+				}
+			}
+			#regForm {
+				width: 715px;
+				margin-top: 2em;
+			}
+		}
+		.section+.section {
+			@include nobor;
+		}
+	}
+}
+
+.clear {
+	@include clear;
+}
+.fcO {
+	color: #f1894a;
+}
+.fcG {
+	color: #ccc;
+}
+.borderB {
+	border-bottom: 1px #ccc solid;
+}
+.boline {
+  background-color: transparent;
+  border: none !important;
+  border-bottom: 1px solid #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: 0;
+}
+.maT {
+	margin-top: 50px;
+}
+.pa{
+	padding-left: 0;
+	padding-right: 0;
+}
+.control-label {
+	vertical-align: middle;
+}
+.form-control {
+	vertical-align: middle;
+}
+.arrow {
+	float: right;
+	cursor: pointer;
+	margin-top: -15px;
+}
+
+.modal-dialog {
+	width: 1024px;
+	.modal-content{
+		background: url("play/md_bg.png") 0px 0px;
+		background-color: #FFF;
+	}
+}

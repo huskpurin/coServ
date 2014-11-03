@@ -1,0 +1,36 @@
+@import "wonderful.scss";
+
+
+.newspager {	
+	position: relative;	
+	.title{	
+		@include title;
+	}
+	.article {
+		@include article;
+		
+		.section{
+			@include section;
+			img {
+				@include newsimg;
+			}
+			p {
+				@include p;			
+			}
+			.more {	
+				margin-top: 10px;				
+				float: right;
+				a {
+				color: #555859;	
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}		
+}
+
+.hover {
+	background: url("/play/more.png") no-repeat;
+}

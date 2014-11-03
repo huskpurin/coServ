@@ -1,0 +1,24 @@
+exports.run = function(inData, callback)  {
+	var  rtnData = {errCode: 0};
+	if (inData._loc == 'en') {
+		rtnData.value = {
+			list: [
+			{
+				title: 'What is coServ?',
+				body: 'coServ is a tidy web server implemented in Node.js. It is intended to be a server facade which could draw data or contents from multiple sources. Mashup content from multiple sources can be done easily.coServ can be used to build simple websites with just a few static pages or extremely complicated web applications. HTML, Javascript and CSS files can all run through the template engine. coServ also breaks up web pages into reusable blocks. By reusing and embedding blocks, single-page web applications can be easily built.Created in the view of the "internet of servers" paradigm, servers crossing domains can interact with each other and co-produce contents that can best serve for their users. coServ is also created to help web site builders to leverage the COIMOTION API services.'
+			}
+			]
+		};
+	}
+	else if (inData._loc == 'zh') {
+		rtnData.value = {
+			list: [
+			{
+				title: '什麼是 coServ?',
+				body: 'coServ 是一個新型的 web server，不論是只有幾個靜態網頁的簡易網站，到能夠整合資料庫、甚至數個網站的複雜的網路應用，coServ 都能幫助您快速而有效的達成。提供內建的樣板引擎（template engine）讓HTML、Javascript 和CSS都能動態產生。此外，coServ 將網頁分解成較小的區塊，而這些內容區塊可以被動態的載入。如此一來，單頁式網站也很容易在 coServ 上實作出來。coServ 是基於 「internet of servers」 的理念所設計的。這意味不同網域的 server 可以互相交談，進而合作產出對使用者最佳的內容或服務。此外，coServ 也是為了協助開發者利用 COIMOTION API 這個後端服務而設計的。'
+			}
+			]
+		};
+	}
+	callback( rtnData );	
+};

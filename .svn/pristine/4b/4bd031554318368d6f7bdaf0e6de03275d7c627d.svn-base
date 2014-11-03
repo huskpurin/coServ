@@ -1,0 +1,21 @@
+@import "wonderful.scss";
+
+.contactpager {		
+	position: relative;	
+	.title{	
+		@include title;
+	}
+	article {
+		@include article(hidden);
+
+		section{
+			@include section;
+			img {
+				@include newsimg;
+			}
+			p {
+				@include p;			
+			}
+		}
+	}
+}

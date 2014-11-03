@@ -1,0 +1,51 @@
+@import "wonderful.scss";
+
+.h4 {
+	width: $w * 0.2;
+	@include float;	
+}
+.table {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	box-sizing: content-box;	
+	width: $w * 0.8;
+	@include float;	
+	border-collapse: separate;
+	border-spacing: 0 20px;
+	thead { 
+		tr {			
+			th {
+			background: #c8c0b3;		
+			@include textC;
+			padding: 5px;
+			}
+		}
+	}
+	tbody {
+		tr{
+			border-bottom: 1px solid #ddd;
+			/*display: inline-table;*/
+			display: run-in;
+			width: $w;				
+			td {
+				@include td;				
+			}
+			td:first-child {
+				@include textC;
+			}
+			td:last-child {
+				border-right: none;
+				@include textC;
+			}
+		}
+	}
+}
+.clear {
+	@include clear;
+}
+#nobor {
+	border-bottom: none;
+	padding-top: 20px;
+}

@@ -1,0 +1,14 @@
+@import "wonderful.scss";
+
+p {
+	@include p;	
+	li {
+		margin-top: 20px;
+		.tdY {
+			@include tdY;
+		}
+		.warn {
+			@include warn;
+		}
+	}		
+}

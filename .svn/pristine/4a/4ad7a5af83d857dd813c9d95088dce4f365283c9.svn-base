@@ -1,0 +1,6 @@
+<div class="contactpager">
+  <div class="title">聯絡我們 <span>Contact Us</span></div>
+  <div class="article">
+	<% block('/contactInfo'); %>
+  </div>
+</div>

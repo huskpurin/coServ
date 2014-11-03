@@ -1,0 +1,28 @@
+@import "wonderful.scss";
+
+.h4 {
+	width: $w / 2;
+	@include float;
+}
+.tableL {	
+	width: $w / 3;
+	@include float;	
+}
+.tableR {
+	width: $w / 4;
+	@include float;
+}
+th {
+	background: #c8c0b3;
+	text-align: center;
+	}
+td {
+	border-bottom: 1px #eee solid;			
+}				
+td:first-child {
+	text-align: center;						
+}
+
+.clear {
+	@include clear;
+}

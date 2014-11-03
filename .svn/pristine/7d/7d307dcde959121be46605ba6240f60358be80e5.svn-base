@@ -1,0 +1,29 @@
+<div class="infopager">
+  <div class="title">課程介紹 <span>Course Introduction</span></div> 
+  <div class="article">
+  	  <!-- 連結報名系統 -->
+      <div class="section">      
+       	<% block('/system'); %>
+      </div>
+      <!-- 課程簡介 -->
+      <div class="section">      
+       	<% block('/subject'); %>
+      </div>
+      <!-- 課程內容 -->
+      <div class="section">      
+       	<% block('/contents'); %>
+      </div>
+      <!-- 專業講師群 -->
+      <div class="section">      
+       	<% block('/lector'); %>
+      </div>
+      <!-- 報名須知 -->
+      <div class="section">      
+       	<% block('/apply'); %>
+      </div>
+      <!-- 保證金說明 -->
+      <div class="section">      
+       	<% block('/money'); %>
+      </div>
+  </div>
+</div>

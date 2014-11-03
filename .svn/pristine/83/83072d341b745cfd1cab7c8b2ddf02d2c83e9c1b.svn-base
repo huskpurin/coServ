@@ -1,0 +1,30 @@
+/* Add css rules here that are valid for the whole page */
+
+#pgContainer {
+	margin: 0 auto;
+	padding: 0;
+	width: 960px;
+	font-family: "微軟正黑體","Adobe 黑体 Std R", "Adobe 繁黑體 Std B",  Arial, sans-serif;
+	background-color: rgba(255,255,255,0.8);
+	background: url("/play/bg.jpg") repeat-y;
+}
+#pgHead,#pgContent,#pgFooter {
+	width: 100%;
+	margin: 0;
+	padding: 0;		
+}
+#pgHead {
+	height: 75px;				
+}
+#pgContent {
+	background-color: rgba(255, 246, 230, 0.5);		
+}
+#pgFooter {
+	clear: both;
+	height: 138px;
+	background: #FFF;
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}

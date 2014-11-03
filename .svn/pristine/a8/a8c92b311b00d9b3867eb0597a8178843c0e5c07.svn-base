@@ -1,0 +1,25 @@
+@import "coserv.scss";
+@include link;
+
+.content {
+	@include content;
+	font-family: $ff1;
+	h1 {
+		@include h1;
+		span {
+			@include span;
+		}
+	}
+	.pa {
+		@include pa;
+		img {
+			@include imgStyle;
+		}
+		h4 {	
+			@include h4 {
+				margin-top: 1em;
+				margin-bottom: 3em;					
+			}
+		}
+	}
+}

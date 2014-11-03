@@ -1,0 +1,25 @@
+@import "wonderful.scss";
+
+
+p {
+	@include p;
+}
+ol{
+	-webkit-padding-start: 25px;
+	li {
+		// margin-top: 20px;
+		line-height: 24px;
+	}
+	.accountInfo {
+		background: #F6E69B;
+	}
+}
+.tdY {
+	@include tdY;
+}
+.warn {
+	@include warn;
+}
+.clear {
+	@include clear;
+}

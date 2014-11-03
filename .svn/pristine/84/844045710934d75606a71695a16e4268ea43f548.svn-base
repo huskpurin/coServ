@@ -1,0 +1,44 @@
+<div id="header" class="col-md-12">
+  <div class="row">
+    <div id="home" class="col-md-5">
+      <a href="/"><img src="/play/home.png" alt="回首頁"></a>
+    </div>
+    <div id="nav" class="col-md-7 pull-right">
+      <ul>
+        <!-- 最新消息 -->
+        <!-- <li class="m1"><a href="/"></a></li> -->
+        <li><a href="/" class="m1"><img src="/play/news_n.png" alt=""></a></li>
+        <!-- 課程介紹 -->
+        <!-- <li class="m2"><a href="/info"></a></li> -->
+        <li><a href="/info" class="m2"><img src="/play/subject_n.png" alt=""></a></li>
+        <!-- 成果報導 -->
+        <!-- <li class="m3"><a href="/result"></a></li> -->
+        <li><a href="/result" class="m3"><img src="/play/result_n.png" alt=""></a></li>
+        <!-- 活動報名 -->
+        <!-- <li class="m4"><a href="/register"></a></li> -->
+        <li><a href="/register" class="m4"><img src="/play/apply_n.png" alt=""></a></li>
+        <!-- 聯絡我們 -->
+        <!-- <li class="m5"><a href="/contactUs"></a></li> -->
+        <li><a href="/contactUs" class="m5"><img src="/play/contact_n.png" alt=""></li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div id="vision_image">
+      <img src="/play/banner.png" alt="玩美文創">
+    </div>
+  </div> -->
+</div>
+
+<script>
+  $$(document).ready(function() {
+
+    $(".m2").hover(function(){
+      addClass('m22');
+    },function(){
+      removeClass('m22');
+   })
+
+  });
+</script>
+

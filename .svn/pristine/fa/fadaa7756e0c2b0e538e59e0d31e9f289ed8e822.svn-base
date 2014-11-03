@@ -1,0 +1,67 @@
+exports.run = function(inData, callback)  {
+	var  rtnData = {errCode: 0};
+	if (inData._loc == 'en') {
+		rtnData.value = {
+
+			list: [
+			{
+				slogn: 'Why coServ?',
+				title: 'Page Layout',
+				body: '比網站樣板更強大的「頁型」系統，使前端設計更為簡便。'
+			},
+			{
+				title: 'Blocks and Regions',
+				body: '將網頁分解成區域和區塊。設計時只需專注於小規模的區塊，coServ 會自動將網頁組合好。'
+			},
+			{
+				title: 'EJS-like Template Engine',
+				body: '樣板引擎可動態產生實際的 HTML、 Javascript 與 CSS 的內容。'
+			},
+			{
+				title: 'Customization',
+				body: '利用 node.js 的模組來提供網站客製化的功能。'
+			},
+			{
+				title: 'BaaS support',
+				body: 'coServ 能自動從 BaaS服務—COIMOTION API 引擎中讀寫資料。'
+			},
+			{
+				title: 'Multi-language Support',
+				body: '利用語系資源套件來支援多國語系。支援多國語言只需單一的 HTML 原始檔。'
+			}
+			]
+		};
+	}
+	else if (inData._loc == 'zh') {
+		rtnData.value = {
+			list: [
+			{
+				slogn: '為什麼要使用coServ ?',
+				title: 'Page Layout',
+				body: '比網站樣板更強大的「頁型」系統，使前端設計更為簡便。'
+			},
+			{
+				title: 'Blocks and Regions',
+				body: '將網頁分解成區域和區塊。設計時只需專注於小規模的區塊，coServ 會自動將網頁組合好。'
+			},
+			{
+				title: 'EJS-like Template Engine',
+				body: '樣板引擎可動態產生實際的 HTML、 Javascript 與 CSS 的內容。'
+			},
+			{
+				title: 'Customization',
+				body: '利用 node.js 的模組來提供網站客製化的功能。'
+			},
+			{
+				title: 'BaaS support',
+				body: 'coServ 能自動從 BaaS服務—COIMOTION API 引擎中讀寫資料。'
+			},
+			{
+				title: 'Multi-language Support',
+				body: '利用語系資源套件來支援多國語系。支援多國語言只需單一的 HTML 原始檔。'
+			}
+			]
+		};
+	}
+	callback( rtnData );
+};

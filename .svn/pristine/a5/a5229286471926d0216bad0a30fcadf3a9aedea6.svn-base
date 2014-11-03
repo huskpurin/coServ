@@ -1,0 +1,52 @@
+<!-- TODO: 清單layout -->
+<%=JSON.stringify(value)%>
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th>梯次</th>
+	    <th>日期</th>
+	    <th>時間</th>
+	    <th>區域</th>
+	    <th>場次</th>
+	    <th>姓名</th>
+	    <th>性別</th>
+	    <th>公司名稱</th>
+	    <th>公司設立年份</th>
+	    <th>產業類別</th>
+	    <th>產品/營業項目簡述</th>
+	    <th>職稱</th>
+	    <th>連絡電話</th>
+	    <th>傳真</th>
+	    <th>E-mail</th>
+	    <th>連絡地址</th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% var i = 1;
+       if (value && value.list.length > 0) {
+         value.list.forEach(function(item) {
+    %>
+    <!-- open = ( onTime < now && now < offTime) ? true : false; -->
+	  <tr>
+	    <td><%= item.siID %></td>
+	    <td><%= item.date %></td>
+		<td><%= item.mdTime %></td>
+		<td><%= item.place %></td>
+		<td><%= item.event %></td>
+		<td><%= item.fname %></td>
+		<td><%= item.gender %></td>
+		<td><%= item.orgName %></td>
+		<td><%= item.orgDate %></td>
+		<td><%= item.industry %></td>
+		<td><%= item.project %></td>
+		<td><%= item.job %></td>
+		<td><%= item.phone %></td>
+        <td><%= item.fax %></td>
+        <td><%= item.email %></td>
+		<td><%= item.addr %></td>
+	  </tr>
+	    <% });
+     } %>
+	</tbody>
+</table>

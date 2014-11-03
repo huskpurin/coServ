@@ -1,0 +1,22 @@
+//自訂捲軸
+ctrl.startup = function()  {
+  var article = ctrl.sel('.article'),
+      body = '';
+  var srvPath = '/bustime/news',
+      req = {url: srvPath + '/list'};
+    __.api(req, function(data) {
+      data.value.list.forEach(function(item) {
+        req.url = srvPath + '/view/' + item.ngID;
+        __.api(req, function(data) {
+          body += '<div class="section">' + data.value.body + '</div>';
+          article.prepend(body);
+        });
+      });
+    });
+    
+   scrollbar();
+};
+function scrollbar() {
+  var $scrollbar = $("#scrollbar1");
+      $scrollbar.tinyscrollbar();
+};

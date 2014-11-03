@@ -1,0 +1,24 @@
+@import "wonderful.scss";
+
+.modal-header {
+  color: #fff;
+  // background-color: #f0ad4e;
+  background-color: $fc4;
+  border-color: #eea236;
+  padding: 5px;
+  @include fwY;
+}
+.modal-title {
+	letter-spacing: 2.5em;
+}
+.modal-body {
+	padding: 20px 70px;
+	color: $fc1;
+	font-size: $fs1 * 1.1;	
+	line-height: 2.0em;
+	font-weight: 600;
+}
+
+.clear {
+	@include clear;
+}

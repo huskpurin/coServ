@@ -1,0 +1,7 @@
+@import "wonderful.scss";
+
+.contactInfo {		
+	p {
+		@include p;			
+	}
+}

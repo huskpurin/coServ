@@ -1,0 +1,44 @@
+{
+    "coserv.coimotion.com": {
+        "title": "Single-Page Web Application Demo",
+        "validFrom": "",
+        "validTo": "",
+        "locale": "en",
+        "home": "/index",
+        "theme": "index",
+        "appKeys": {
+            "wcoim": "",
+            "blogDemo": "ce51fbb8-1df6-0442-e187-3e5e0a8785b8"
+        },
+        "caCode": "blogDemo"
+    },
+
+    "127.0.0.1": {
+        "title": "Single-Page Web Application Demo",
+        "validFrom": "",
+        "validTo": "",
+        "locale": "en",
+        "home": "/index",
+        "theme": "index",
+        "appKeys": {
+            "wcoim": "",
+            "blogDemo": "ce51fbb8-1df6-0442-e187-3e5e0a8785b8"
+        },
+        "caCode": "blogDemo"
+    },
+
+    "192.168.1.5": {
+        "title": "Play & Beauty",
+        "validFrom": "",
+        "validTo": "",
+        "locale": "zh",
+        "home": "/index",
+        "theme": "play",
+        "appKeys": {
+            "wcoim": "",
+            "testBusAPI": "88cfeda2-8863-c114-e512-2dd0e09f051b"
+        },
+        "caCode": "testBusAPI",
+        "note": "自己的ip，測試用，上線要拿掉"
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "/index": {
+        "id": "no",
+         "title": "最新消息"
+    },
+    "/info": {
+        "id": "no",
+        "title": "課程介紹"
+    },
+    "/notice": {
+        "id": "no"
+    },
+    "/warning": {
+        "id": "no"
+    },
+    "/register": {
+        "id": "no",
+        "title": "活動報名",
+        "service": "/bustime/session/list/3232",
+        "params": {"detail": "1"}
+    },
+    "/result": {
+        "id": "no",
+        "title": "成果報導"
+    },
+    "/contactUs": {
+        "id": "no",
+        "title": "聯絡我們"
+    },
+    "/system": {
+        "id": "no",
+        "title": "連結報名系統"
+    },
+    "/subject": {
+        "id": "no",
+        "title": "課程簡介"
+    },
+    "/contents": {
+        "id": "no",
+        "title": "課程內容與大綱"
+    },
+    "/lector": {
+        "id": "no",
+        "title": "專業講師群"
+    },
+    "/apply": {
+        "id": "no",
+        "title": "報名須知"
+    },
+    "/money": {
+        "id": "no",
+        "title": "保證金說明"
+    },
+    "/contactInfo": {
+        "id": "no",
+        "title": "聯絡資訊"
+    },
+    "/back/login": {
+      "id": "no"
+    },
+    "/back/article/list": {
+      "id": "no",
+      "title": "後台管理 - 文章",
+      "service": "/bustime/article/list"
+    },
+    "/back/session/list": {
+      "id": "no",
+      "title": "後台管理 - 場次",
+      "service": "/bustime/session/list/3232",
+      "params": {"detail": "1"}
+    },
+    "/back/attendee/list": {
+      "id": "yes",
+      "title": "後台管理 - 報名者",
+      "service": "/bustime/attendee/list"      
+    },
+     "/back/session/info": {
+      "id": "yes",
+      "service": "/bustime/session/info",
+      "params": {"detail": "1"}
+    }
+}

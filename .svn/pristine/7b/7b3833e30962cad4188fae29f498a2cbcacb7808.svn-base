@@ -1,0 +1,37 @@
+@import "wonderful.scss";
+
+.resultpager {
+	position: relative;
+	.title{
+		@include title;
+	}
+	.article {
+		@include article1;
+		.section{
+			@include section;
+			img {
+				@include newsimg;
+			}
+			p {
+				@include p;
+				a {
+					display: block;
+					padding-bottom: 10px;
+					padding-top: 10px;
+					.more {
+					width: 97px;
+					height: 32px;
+					float: right;
+					margin-right: 330px;
+					}
+				}
+			}
+		}
+		.section:last-child {
+			@include nobor;
+		}
+	}
+}
+.clear {
+	@include clear;
+}

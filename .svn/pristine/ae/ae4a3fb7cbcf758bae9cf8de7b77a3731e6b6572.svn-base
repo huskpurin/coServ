@@ -1,0 +1,122 @@
+a, *:hover{
+  text-decoration: none;
+}
+.wrapper {
+  margin-top: 59px;
+}
+
+/*目錄*/
+.typeside {
+  width: 230px;  
+  min-height: 2210px;
+  max-height: auto;
+  float: left;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 0;
+  background: #dfdfdf; 
+  position: absolute;
+  left: 0; 
+  -webkit-transition: margin-left .3s ease;
+  -moz-transition: margin-left .3s ease;
+  -o-transition: margin-left .3s ease;
+  -ms-transition: margin-left .3s ease;
+  transition: margin-left .3s ease;  
+}
+.type {
+  width: 160px;
+  margin: 4em auto 0;
+  text-align: center;
+  border-bottom: 4px double #999;     
+}
+.type span{
+  font-size: 3em;
+  color: #4d4d4d;
+  line-height: 2em;
+}
+.callout{
+  margin: 20px;  
+  cursor: pointer;
+}
+.callout  h3{
+  height: 30px;
+  color: #2EA0D1;
+  line-height: 2em;
+  font-size: 1.8em;
+  margin: 0;
+  overflow: hidden;
+  text-overflow : ellipsis;
+}
+.callout h3 small{
+  color: #77C1E1;
+  display: block;
+  line-height: 1.5em !important;
+  text-decoration: 10px !important;
+  margin-bottom: 20px !important;
+  display: block;
+}
+.callout a:hover h3,
+.callout a:hover small{
+  color: #6D6D6D;
+}
+
+/*分頁按鈕*/
+.row_down{
+  width: 95%;
+  margin: 40px auto;
+}
+.pagination {
+  font-family: ff-din-web-condensed,Helvetica,sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: normal;
+  text-align: center;
+  padding: 0;
+  margin: 30px auto 0;
+  width: 100%;
+  clear: both;
+}
+.pagination p {
+  width: 100%;
+  padding: 0;
+  margin: 1em auto !important;
+  text-align: center;
+}
+.pagination a,
+.pagination span {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  -o-border-radius: 2em;
+  border-radius: 2em;
+  border: 4px solid #fff !important;
+  padding: .85em .8em .7em .8em;
+  margin: 0 0.5em;  
+  color: #fff !important;
+}
+.pagination a {
+  background: #599CCE !important;
+}
+.pagination span {  
+  background: #999;
+}
+.pagination a:hover
+/*.pagination a:link,
+.pagination a:active,
+.pagination a:visited*/ {
+  background: #FFF !important;
+  color: #000 !important;
+  border-color: #599CCE !important;
+}
+/*右側*/
+.viewside{
+  margin: 0;
+  padding: 1em;
+  min-height: 800px;
+  max-height: auto;
+  overflow: visible;
+  position: relative;
+  background: #fff;
+  margin-left: 230px;
+}

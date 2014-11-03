@@ -1,0 +1,15 @@
+@import "wonderful.scss";
+
+
+.contactpager {		
+	@include page;;	
+	.title{	
+		@include title;
+	}
+	.article {
+		@include article1;
+	}
+}
+.clear {
+	@include clear;
+}

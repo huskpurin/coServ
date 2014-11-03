@@ -1,0 +1,68 @@
+@import "wonderful.scss";
+
+#footer{
+  width: $960;
+  .sitemap {
+    font-family: $ff1;
+    margin-left: 40px;
+    margin-right: -40px;
+    padding-top: 50px;
+    vertical-align: middle;
+    h4 {
+      float: left;
+      margin-left: -20px;
+      // font-family: #000;
+      // border-bottom: 1px #ccc solid;
+      // line-height: 40px;
+      // font-weight: bold;
+    }
+    ul {
+      float: left;
+      margin-left: 22px;
+      padding-top: 6px;
+      li {
+        display: inline-block;
+        font-size: 0.8em;    
+        margin-right: 10px;
+        height: 15px;
+      }
+      a {
+        display: block;
+        color: $fc1;
+        text-decoration: none;
+        padding-left: 15px;
+        border-left: 1px solid $fc1;    
+        &:hover {
+          text-decoration: none;
+          color: $fc2;      
+        }
+        &.last {
+          margin-right: -30px;
+        }
+      }    
+    }
+  }
+  #sponsors {
+    padding-right: 20px;
+    margin-left: -15px;
+    .sponsor {
+      display: inline-block;
+      margin-top: 55px;
+      margin-right: 10px;
+      font-family: $ff3;
+      font-size: 0.7em;
+      color: $fc1;
+    }
+  }
+  #recommand {
+    color: #fff;
+    background: #393b3d;
+    margin-top: 30px;
+    font-size: 0.6em;
+    font-weight: lighter;
+    line-height: 3em;
+    text-align: center;
+    font-family: $ff3;
+  }
+}
+

@@ -1,0 +1,27 @@
+@import "wonderful.scss";
+
+.resultpager {	
+	position: relative;	
+	.title{	
+		@include title;
+	}
+	article {
+		@include article;
+
+		section{
+			@include section;
+			img {
+				@include newsimg;
+			}
+			p {
+				@include p;	
+				.more {
+					width: 97px;
+					height: 32px;
+
+				}		
+			}
+
+		}
+	}		
+}

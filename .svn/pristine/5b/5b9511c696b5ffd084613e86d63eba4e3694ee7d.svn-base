@@ -1,0 +1,8 @@
+@import "wonderful.scss";
+
+p {
+	margin-top: 5px;
+	font-size: 14px;
+	line-height: 22px;	
+	color: $fc3;		
+}

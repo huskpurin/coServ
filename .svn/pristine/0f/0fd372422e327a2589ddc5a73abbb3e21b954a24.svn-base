@@ -1,0 +1,26 @@
+<!-- TODO: 清單layout -->
+<%=JSON.stringify(value)%>
+
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th>梯次</th>
+	    <th>日期</th>
+	    <th>時間</th>
+	    <th>區域</th>
+	    <th>場次</th>
+	    <th>報名狀態</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  <tr>
+	    <td class="text-center"></td>
+	    <td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	</tbody>
+</table>

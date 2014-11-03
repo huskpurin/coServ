@@ -1,0 +1,61 @@
+@import "wonderful.scss";
+
+#header {
+  #home {
+    height: 30px;
+    margin-top: 45px;
+
+    img {
+      opacity: 0.6;
+    }
+  }
+  #nav{
+    margin-top: 40px;
+    ul {
+      li {
+        display: inline-block;              
+        width: 80px;
+        height: 35px;
+        margin-right: 20px;
+        text-align: center;
+        img {
+          margin-left:-4px;
+        }
+      }
+      a { 
+        color: $fc1;
+        font-size: 1.2em;
+        font-family: $ff1;  
+        padding-bottom: 5px; 
+        display: block;    
+      }
+    }
+  }
+}
+
+.m1:hover {
+  background: url("/play/news_h.png");
+}
+
+.m2:hover {
+  background: url("/play/subject_h.png");
+}
+
+.m3:hover {
+  background: url("/play/result_h.png");
+}
+
+.m4:hover {
+  background: url("/play/apply_h.png");
+}
+
+.m5:hover {
+  background: url("/play/contact_h.png");
+}
+.m1, .m2, .m3, .m4, .m5 {  
+  width: 85px;
+  height: 35px;
+  &:hover img {
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,24 @@
+ctrl.startup = function() {	
+	hover()
+}
+function hover() {
+	$( ".bu" ).hover(function() {		
+		$("li.active").find('.arrow').hide();
+		$("li.active").css('border-bottom-color', 'rgba(255,255,255, 0)');
+		$( this ).find('.arrow').show();					
+	},function() {
+		$( this ).find('.arrow').hide();
+		$("li.active").find('.arrow').show();
+		$("li.active").css('border-bottom-color', '#599CCE');
+	});
+	$( ".active" ).hover(function() {		
+		$( this ).find('.arrow').show();
+		$( this ).css('border-bottom-color', '#599CCE');	
+	},function() {
+		$( this ).find('.arrow').hide();
+		$( this ).css('border-bottom-color', 'rgba(255,255,255, 0)');
+	});
+}
+ctrl.selectLang = function(sel) {
+    window.location = '/?_loc=' + $(sel).val();
+};
