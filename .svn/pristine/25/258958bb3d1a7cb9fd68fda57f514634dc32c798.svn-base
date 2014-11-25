@@ -1,0 +1,25 @@
+<div class="typeside">
+	<!-- 收合 -->
+	<div class="side-nav" style="visibility:hidden">            
+        <i class="fa fa-chevron-left"></i>            
+    </div>
+    
+    <div class="type">
+		<span><%=ph.overviw%></span>
+	</div>
+
+	<% for (var i in value.list) {
+		var  item = value.list[i],
+			 createTime = item.createTime,
+			 idx = createTime.indexOf('T');
+		createTime = createTime.substring(0, idx);
+	%>
+	<div class="callout">
+		<a href="/coserv/doc/<%=item.ngID%>?_loc=<%=bi.locale%>">
+			<h3><%=item.title%></h3>
+			<small><%=createTime%></small>
+		</a>			
+	</div>
+	<% } %>
+</div>
+	

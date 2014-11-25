@@ -1,0 +1,44 @@
+@import "coserv.scss";
+@include link;
+
+@mixin iStyle {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	padding-top: 18px;
+	font-size: $fs1 * 6;
+	color: #333;	
+}
+
+.content {
+	@include content;
+	font-family: $ff1;
+	h1 {
+		@include h1;
+		span {
+			@include span;
+		}
+	}
+	.setHeight {
+		height: 290px;
+		i {
+			@include iStyle;
+		}
+		.sub {	
+			@include sub {
+				@include ma(-15px, -15px);
+				padding-top: 10px;					
+			}
+		}
+		p {
+			@include p;
+		}
+	}
+	.more {
+		@include more;
+	}
+}
+
+
+
+

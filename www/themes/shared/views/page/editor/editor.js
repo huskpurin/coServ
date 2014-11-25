@@ -1,8 +1,7 @@
 var cnQ = [[],[],[],[]], hideLeft = true;
-var apiURI, srvPath;
+var apiURI;
+var srvPath;
 var myEditor;
-
-/* uploader of attachments */
 var sender = {
   settings: {
     url: '/',
@@ -17,12 +16,11 @@ var sender = {
       alert(JSON.stringify(err));
     }
   },
-  init: function(_srvPath) {
-    var geID = getGe(),
-        ngID = getNg();
+  init: function() {
+    var geID = ctrl.sel('#ng').attr('ge'),
+        ngID = ctrl.sel('#ng').attr('ng');
 
-    sender.settings['url'] += _srvPath+'/attach/';
-
+    sender.settings['url'] += getCA()+'/'+srvPath + 'attach/';
     if (ngID !== 'undefined') {
       sender.settings['url'] += ngID;
     } else if (geID !== 'undefined') {
@@ -31,7 +29,7 @@ var sender = {
 
     ctrl.sel('#uploader').submit(sender.doUpload);
     ctrl.sel('input[name="aaa"]').change(function() {
-      ctrl.sel('#uploader').submit();
+    ctrl.sel('#uploader').submit();
     });
     sender.newUploadBtn(ctrl.sel('#addIcon'), 1);
     sender.newUploadBtn(ctrl.sel('#addAtt'), 2);
@@ -51,64 +49,41 @@ var sender = {
     $.ajax(sender.settings);
   }
 };
-/* ------------------------ */
-
-
 ctrl.startup = function() {
   srvPath = getSrvPath();
   ctrl.checkGeoInfo(ctrl.receiveAll);
-  sender.init(srvPath);
-  // ctrl.sel('select[name="locID"]').val(getLocale());
+  sender.init();
 };
 
-/* check that geoLoc exist info or not
-*   page : load it.
-*   yes : find info page, then load it.
-*   no : new one.
-*/
 ctrl.checkGeoInfo = function(callback) {
-  // var findGeInfo = {url:srvPath+'/info/'+getGe(), post:{detail:1, "_loc": getLocale()}, hasCA:true},
-  var findGeInfo = {url:srvPath+'.page/list/'+getGe(), post:{getAll:1, "_loc": getLocale()}, hasCA:true},
+  var findGeInfo = {url:'/'+srvPath+'info/'+getGe(), post:{detail:1}},
       fromPage = (getNg() !== 'undefined'),
-      fromGeo = (getGe() !== 'undefined'),
-      hasCont = (ctrl.sel('#ng').attr('noCont') !== "true");
-
-  if (fromPage && hasCont) {
+      fromGeo = (getGe() !== 'undefined');
+  if (fromPage) {
     apiURI = '/images/'+getNg();
-    callback({ngID: getNg()});
+    callback(getNg());
   } else {
     if (fromGeo) {
-
       __.api(findGeInfo, function(data) {
-        var infoPage = data.value.list[0];
-        if (data.errCode === 0 && infoPage && !infoPage.noCont) {
-          ctrl.sel('#ng').attr('ng', infoPage.ngID);
-          apiURI = '/images/'+infoPage.ngID;
-          ctrl.sel('#save').text('<%=ph.save%>');
-          callback({geID: getGe(), ngID: infoPage.ngID});
+        if (data.errCode === 0 && data.value.ngID) {
+          ctrl.sel('#ng').attr('ng', data.value.ngID);
+          apiURI = '/images/'+data.value.ngID;
+          ctrl.sel('#save').text('儲存');
+          callback(data.value.ngID);
         } else {
           switchSize(false);
         }
       });
-
     } else {
-
       switchSize(false);
-
     }
   }
 };
 
-/* refresh editor */
-ctrl.receiveAll = function(json, onlyGeo) {
-  var params = { icon:1, geo:1, pic:1, att:1, "_loc": getLocale()},
-      req = { url:srvPath, post:params, hasCA:true };
-  if (json.geID)
-    req.url += '.page/view/'+json.geID+'.'+json.ngID;
-  else
-    req.url += '/view/'+json.ngID;
-
+ctrl.receiveAll = function(ng, onlyGeo) {
+  var req = {url: getCA() +'/'+srvPath+'view/'+ng, post:{icon:1, geo:1, pic:1, att:1, "_loc":getLocale()}, hasCA: true};
   __.api(req, function(data) {
+    var tTitle = ctrl.sel('div#mdTime').text();
     if (data.errCode === 0) {
       ctrl.draw(0, data.value.geoList);
       if (onlyGeo)
@@ -123,8 +98,9 @@ ctrl.receiveAll = function(json, onlyGeo) {
       ctrl.sel('input[name="title"]').val(data.value.title);
       ctrl.sel('input[name="summary"]').val(data.value.summary);
       ctrl.sel('.cleditor').val(data.value.body);
-      ctrl.sel('div#mdTime').text('<%=ph.lastMdTime%>：'+new Date(data.value.mdTime).toLocaleString());
+      ctrl.sel('div#mdTime').text(tTitle + new Date(data.value.mdTime).toLocaleString());
       ctrl.sel('select[name="locID"]').val(data.value.locID);
+
       if (data.value.isPublic === 1)
         ctrl.sel('input[name="isPublic"]').prop('checked', true);
 
@@ -133,10 +109,9 @@ ctrl.receiveAll = function(json, onlyGeo) {
   });
 };
 
-/* refresh list of aux */
 ctrl.receive = function(type) {
-  var pdata = {"nType": type, "_loc": getLocale()},
-      req = {url:srvPath+'/listAux/'+getNg(), post:pdata, hasCA:true};
+  var pdata = {"nType": type},
+      req = {url: getCA() +  '/' + srvPath + 'listAux/' + getNg(), post:pdata, hasCA: true};
   __.api(req, function(data) {
     if (data.errCode === 0) {
       if (+type === 1) {
@@ -150,7 +125,6 @@ ctrl.receive = function(type) {
   })
 };
 
-/* set el of aux, including tag, url...etc */
 ctrl.draw = function(type, arr) {
   var items = '';
   switch (+type) {
@@ -187,26 +161,24 @@ ctrl.draw = function(type, arr) {
   }
   cnQ[+type] = [];
 };
-
-/* show geo-modal */
 ctrl.showAddCnt = function(ngID, geID)  {
-  var params = {"srvPath": srvPath, "ngID": getNg(), "geID": geID, "disable": isDisabled()};
-  if (isDisabled() !== 'undefined')
-    params.disable = isDisabled();
-  ctrl.embed('.addGeo', '/custContents/addGeoCnt', {params: params}, function(emCtrl) {
+  // TODO: change interface to connect geoLoc Modal.
+  var params = {srvPath: srvPath, ngID: ngID, geID: geID};
+  if (allowGeo() !== 'undefined')
+    params.allowGeo = allowGeo();
+
+  ctrl.embed('.addGeo', '/editorDemo/addGeoCnt', {params: params}, function(emCtrl) {
     emCtrl.addHandler("regCloseAddGeoCnt", ctrl.closeAddCnt);
     ctrl.sel('#geoModal').css('z-index', '9999');
   });
 };
 
-/* close geo-modal */
 ctrl.closeAddCnt = function() {
   ctrl.sel("#geoModal").modal('hide').on('hidden.bs.modal', function () {
-    ctrl.receiveAll({ngID: getNg()}, true);
+    ctrl.receiveAll(getNg(), true);
   });
 };
 
-/* record sellection of aux */
 ctrl.mQueue = function(type, cnID) {
   if (cnQ[type].indexOf(cnID) == -1)
     cnQ[type].push(cnID);
@@ -214,8 +186,6 @@ ctrl.mQueue = function(type, cnID) {
     cnQ[type].pop(cnID);
 
 };
-
-/* insert attachment into page */
 ctrl.insertCnt = function() {
   cnQ[3].forEach(function(cnID) {
     var url = ctrl.sel('img[cn="'+cnID+'"]').attr('data-src');
@@ -223,55 +193,46 @@ ctrl.insertCnt = function() {
   });
   ctrl.receive(3);
 };
-
-/* del attachment (of this page) */
 ctrl.delCnt = function(type) {
   cnQ[type].forEach(function(cnID) {
-    var req = {url: srvPath+'/unattach/'+cnID, post:{"_loc": getLocale()}, hasCA:true};
+    var req = {url: '/'+srvPath+'unattach/'+cnID, post:{}};
     __.api(req, function(data) {
       if (data.errCode === 0) {
         ctrl.receive(type);
       } else {
-        alert('<%=ph.notAuthor%>');
+        alert('新增者才能修改');
         // alert(data.message);
       }
     });
   });
 };
-
+ctrl.showMenu = function() {
+  ctrl.sel('.Box-group').slideToggle('slow').promise().done(switchSize);
+}
 ctrl.save = function() {
   var pdata = collectData(),
       ngID = getNg(),
       geID = getGe(),
-      op = ( ngID === 'undefined' ? ( geID === 'undefined' ? '/create' : '.page/create/'+geID ) : (geID === 'undefined' ? '/update/'+ngID : '.page/update/'+geID+'.'+ngID) ),
-      req = {url:srvPath+op, post:pdata, hasCA:true};
-
+      op = ( ngID === 'undefined' ? ( geID === 'undefined' ? 'create' : 'updInfo/'+geID ) : (geID === 'undefined' ? 'update/'+ngID : 'updInfo/'+geID) ),
+      req = {url: getCA() + '/' + srvPath+op, post:pdata, hasCA: true};
     __.api(req, function(data) {
       if (data.errCode === 0) {
         ctrl.callHandler("reqCloseEditor");
-      } else if (data.errCode === 2 || data.errCode === 1) {
-        alert('<%=ph.notAuthor%>');
+      } else if (data.errCode === 2) {
+        alert('建立文章的人才能編輯喔！');
       } else {
         alert( data.message );
       }
     });
 };
 
-/* sliding-effect of left-menu */
-ctrl.showMenu = function() {
-  ctrl.sel('.Box-group').slideToggle('slow').promise().done(switchSize);
-};
-
-/* different type of editor
-*   1. new/add page
-*   2. edit old page(full/half)
-*/
 function switchSize(allMenu) {
   if (!allMenu) {
     ctrl.sel('#menuBtn').hide();
     ctrl.sel('#iconField').hide();
     ctrl.sel('#iconRelate').toggleClass('col-md-12 col-xs-12 col-md-10 col-xs-10');
   }
+
   if (hideLeft) {
     ctrl.sel('#leftSide').css('display', 'none');
     ctrl.sel('#rightSide').removeClass('col-md-9');
@@ -283,18 +244,17 @@ function switchSize(allMenu) {
     ctrl.sel('.rightMenu').removeClass('col-md-12');
   }
   hideLeft = !hideLeft;
+
   embedEditor();
 
 };
-
-
 function embedEditor() {
   /* if initialized, it just change editor's size */
   if (!myEditor) {
     myEditor = $('#body_cnt').cleditor({
       // not to wait for rendering completely, you can get a right width
       width: $('.modal-dialog').width() * 0.66,
-      height: $(window).height() * 0.45,
+      height: $(window).height() * 0.55,
 
       controls:     // controls to add to the toolbar
                     "bold italic underline strikethrough | font size " +
@@ -347,7 +307,7 @@ function collectData()  {
                  summary: ctrl.sel('input[name="summary"]').val(),
                  body: ctrl.sel('iframe').contents().find('body').html(),
                  isPublic: ctrl.sel('input:checked[name="isPublic"]').val(),
-                 _loc: getLocale() };
+                 _loc: ctrl.sel('select[name="locID"]').val() };
   /* isPiblic == 'on' */
   if (!pdata.isPublic)
     pdata.isPublic = 0;
@@ -356,28 +316,28 @@ function collectData()  {
   return  pdata;
 };
 
-/* parameters of the editor */
-function getNGAttr(key) {
-  return ctrl.sel('#ng').attr(key);
-}
+function getNGAttr(key)  {
+    return  ctrl.sel('#ng').attr(key);
+};
 function getSrvPath() {
-  if (getNGAttr('srvPath') !== 'undefined')
-    return getNGAttr('srvPath');
-  else
-    return getNGAttr('ca')+'/'+getNGAttr('appCode')+'/'+getNGAttr('rs');
-}
+    return  getNGAttr('srv');
+};
+function getCA() {
+    return  getNGAttr('ca');
+};
 function getNg() {
-  return getNGAttr('ng');
-}
+    return  getNGAttr('ng');
+};
 function getGe() {
-  return getNGAttr('ge');
-}
+    return  getNGAttr('ge');
+};
 function getLocale() {
-  return ctrl.sel('select[name="locID"]').val();
-}
-function isDisabled() {
-  return getNGAttr('disable');
-}
+    return  getNGAttr('locale');
+};
+function allowGeo() {
+    return  getNGAttr('allowGeo');
+};
 function getCtrl() {
-  return ctrl.sel('#geoList').attr('ctrl');
-}
+  //return ctrl.sel('#geoList').attr('ctrl');
+	return ctrl.sel('#leftSide').attr('ctrl');
+};

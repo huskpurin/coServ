@@ -48,12 +48,8 @@
     <en>Upload</en>
     <zh>上傳</zh>
   </ph>
-  <ph id="lastMdTime">
-  	<en>Last modify time</en>
+  <ph id="mdTime">
+    <en>Last modified</en>
     <zh>上次儲存時間</zh>
-  </ph>
-  <ph id="notAuthor">
-  	<en>You are not the author of this page.</en>
-    <zh>您不是這篇文章的作者。</zh>
   </ph>
 </phrases>

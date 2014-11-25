@@ -1,0 +1,21 @@
+@import "coserv.scss";
+
+body{
+	@include wrapper;
+	font-family: $ff1;
+	color: $fc1;
+	font-size: $fs1;
+	line-height: $lh * 2;
+	-webkit-font-smoothing: antialiased; 
+}
+
+#pgHead, #pgFooter, #pgContainer{
+	@include wrapper;
+	@include overflowX;
+}
+
+@media screen and (max-width: 783px) {
+  body { 
+      // overflow-x: auto !important; 
+    }
+}

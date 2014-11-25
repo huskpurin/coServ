@@ -1,0 +1,124 @@
+@import "coserv.scss";
+@include link;
+
+.contactForm {
+  width: 330px;  
+  height: 365px;
+  padding: 0px;
+  font-family: $ff1;
+  position: fixed;
+  bottom: -330px;
+  right: 20px;
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
+  @include transition(all, .25s, ease-out);  
+  @include border-radius-all(7px, 7px, 0px, 0px);
+  .contactHeader {
+    background: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    @include border-radius-all(7px, 7px, 0px, 0px);  
+    .contactTitle {
+      display: inline-block;
+      padding: 8px 0;
+      margin: 0;
+      text-indent: $fs1;
+      color: #fff;
+      line-height: $fs1 * 1.4;
+    }
+    span {
+      float: right;
+      margin-right: 10px;
+      margin-top: 7px;
+      font-size: $fs1 * 1.5;
+      cursor: pointer;
+    }
+    span.up, span.down {
+      display: inline-block;
+      margin-right: 14px;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: $fs1 * 1.2;      
+    }
+  }
+  .contactContent {
+    background: #fff;
+    form{
+      width: $w1;
+      margin:0 auto;
+      padding: $fs1;
+      text-align: center;
+      font-size: $fs1 * 1.5;
+      color: #333;
+      .form-control {
+        width: $w1;
+        vertical-align: middle;
+        border: none !important;    
+        background: #eee !important;
+        height: 3em;
+        @include border-radius(0px);
+        &:focus {
+          @include border(2px, solid, #000);
+          -webkit-box-shadow: none;
+          box-shadow: none;
+        }
+      }
+      textarea {
+        width: $w1;
+        vertical-align: middle;
+        border: none;    
+        background: #eee;
+        @include border-radius(0px);
+      }
+      a.btn-send {
+        width: $w1 * 0.4;
+        display: block;
+        margin: 0 auto !important;
+        padding: 5px;
+        text-align: center;
+        background: $fc2;
+        @include border-radius(5px);
+        font-size: $fs1;
+        color: #fff;   
+        &:hover{
+          background: #888;           
+        }
+      }
+    }
+  }
+}
+
+/* mobile */
+.mobile.contactForm {
+  position: static;
+  margin: 0 auto; 
+  height: 75px;
+}
+.mobile .contactContent {
+  display: none;
+}
+.mobile span {
+  margin-right: 20px;
+  margin-top: 2px;
+  font-size: 3.6em;
+}
+.mobile .contactTitle,
+.mobile span.up, 
+.mobile span.down,
+.mobile form,
+.mobile i {
+  font-size: 3em;
+}
+.mobile span.down,
+.mobile span.up {
+  margin-top: 5px;     
+}
+.mobile .form-control {  
+  font-size: 0.7em;
+}
+.mobile a.btn-send {
+  margin: 2em auto;
+  padding: 1.5em;
+}

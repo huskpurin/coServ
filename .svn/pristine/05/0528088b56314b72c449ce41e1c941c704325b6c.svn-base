@@ -1,0 +1,41 @@
+<div class="wrapper">
+	<div class="article">
+
+		<div class="title">
+			<h1>Sass</h1>
+			<h3>(Syntactically Awesome StyleSheets)</h3>
+		</div>		
+		<div class="sub">
+			<span class="strTime">2014/12/25</span>		
+		</div>
+		<div class="section">			
+
+			<p>Sass is an extension of CSS that adds power and elegance to the basic language. It allows you to use variables, nested rules, mixins, inline imports, and more, all with a fully CSS-compatible syntax. Sass helps keep large stylesheets well-organized, and get small stylesheets up and running quickly, particularly with the help of the Compass style library.</p>			
+
+			<h3>Features</h3>	
+
+			<ul>
+				<li>Fully CSS3-compatible
+				Language extensions such as variables, nesting, and mixins.</li>
+				<li>Many useful functions for manipulating colors and other values.</li>
+				<li>Advanced features like control directives for libraries
+				Well-formatted, customizable output.</li>				
+			</ul>		
+
+			<h4>Syntax</h4>
+			<p>There are two syntaxes available for Sass. The first, known as SCSS (Sassy CSS) and used throughout this reference, is an extension of the syntax of CSS3. This means that every valid CSS3 stylesheet is a valid SCSS file with the same meaning. In addition, SCSS understands most CSS hacks and vendor-specific syntax, such as IE???s old filter syntax. This syntax is enhanced with the Sass features described below. Files using this syntax have the</p>
+			<pre><code> 
+   # Convert Sass to SCSS
+   $ sass-convert style.sass style.scss
+			</code></pre>				
+
+			
+			<p>User-created importers must inherit from <a href="#">Sass::Importers::Base.</a></p>
+	
+			<a href='javascript:scroll(0,0)' class="gotop"><i class="fa fa-chevron-up"></i></a>
+
+		</div>
+	</div>	
+	<div class="viewside"></div>
+</div>
+

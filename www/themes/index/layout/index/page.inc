@@ -5,4 +5,4 @@
 /shared/bootstrap/css/bootstrap.min.css
 
 /shared/css/font-awesome.min.css
-/shared/icomoon2/style.css
+/shared/icomoon/style.css

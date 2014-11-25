@@ -1,0 +1,133 @@
+@import "coserv.scss";
+@include link;
+
+.typeside {
+  width: 230px;  
+  margin: 0;
+  padding-top: 0;  
+  @include pa(20px, 20px);   
+  background: #dfdfdf; 
+  position: absolute;
+  right: 0px; 
+  top: 0px;
+  float:right;
+  z-index: 999;
+  //收合按鈕
+  .sideNav {    
+    @include border-radius-all(8px, 0, 0, 8px);  
+    cursor: pointer;        
+    width: 80px;
+    height: 80px;      
+    padding-top: 20px;
+    padding-left: 20px;
+    background: #dfdfdf;
+    font-size: $fs1 * 3;
+    color: #666;
+    position: relative;
+    top: 200px;
+    right: 100px;    
+    z-index: 9999;
+    i {      
+      display: block;
+      @include ma;
+      &:hover {
+        color: #999;
+      }
+    }
+  } 
+  .on { 
+    margin-top: -45px;
+    .type {
+      width: $w1 * 0.7;
+      // margin: 0em 5px 2em;
+       @include ma(5px, 5px);
+       margin-bottom: 2em;
+      //@include border-bottom(4px, double, #999);
+      span {
+        font-size: $fs1 * 2;
+        color: #4d4d4d;
+        line-height: $fs1 * 1.5;        
+      }
+    }
+    .list {
+      margin: 5px;  
+      cursor: pointer;
+      @include border-bottom(1px, solid, #bcbcbc);
+      .subhead {
+        width: 100%;
+        color: #2781B6;
+        line-height: $fs1 * 1.3;
+        font-size: $fs1 * 1.3;
+        margin: 5px 0 0;      
+        &:active, &:hover, &:focus, &:visited, &.active {
+          color: #6D6D6D;
+        }
+      }
+      small {
+        display: block;
+        color: #aaa;
+        text-align: right;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+    }  
+  }    
+  //分頁按鈕
+  /* .row_down {
+    width: $w1 - +5%;;
+    margin: 40px auto;    
+    .pagination {
+      @include wrapper {
+        font-family: $ff2;
+        font-size: $fs1;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+        clear: both;
+        margin: 30px auto 0;
+      }        
+      a, span {
+        @include border-radius(2em);
+        @include border(4px, solid, #fff);
+        padding: .7em .8em .6em .8em;
+        margin: 0 0.5em;  
+        color: #fff;
+      }
+      a {
+        background: #599CCE;
+        &:hover {
+          background: #FFF;
+          color: #000;
+          border-color: #599CCE;
+        }
+      }
+      span {  
+        background: #999;
+      }
+    }
+  } */
+} 
+
+/* mobile */
+.mobile {
+  .sideNav {
+    visibility: visible !important;
+    right: 100px !important;
+  }
+  span {
+    font-size: 3.5em !important;
+    line-height: 1.5em !important;
+  }
+  .list:last-child {
+    border-bottom: none !important;
+  }
+  .subhead {
+    font-size: 3em !important;
+    line-height: 1em !important;
+    margin-top: 20px !important;
+  }
+  small {
+    font-size: 2.5em !important;
+  }
+}

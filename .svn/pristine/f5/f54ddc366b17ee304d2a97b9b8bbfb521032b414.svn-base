@@ -1,0 +1,53 @@
+var isClick = 0;
+
+ctrl.startup = function() {	
+	sideNav();
+	ctrl.sel(".list a.page<%=bi.query.ngID%>").find('subhead').css('color','#6D6D6D');
+	ctrl.sel(".list a.page<%=bi.query.ngID%>").find('small').css('color','#888888');
+};
+
+function sideNav() {
+	console.log(ctrl.detectmob());
+	if (ctrl.detectmob()){ 
+       	ctrl.sel('.typeside').addClass('mobile');
+       	$(".CoservDoc .viewside").css('width', '0px');
+       	ctrl.sel(".typeside").css('width', '0px');
+       	ctrl.sel(".on").css('display','none');
+	}	
+	
+	ctrl.sel(".sideNav").click(function() { 
+		if (isClick){
+			isClick=0;			
+			$(".CoservDoc .viewside").css('width', '0px');
+			ctrl.sel(".typeside").css('width', '0px');			
+			ctrl.sel(".on").css('display','none');
+			ctrl.sel("i.fa-chevron-right").css('display','none');
+	    	ctrl.sel("i.fa-chevron-left").css('display','block');
+		} 
+	    else {           
+	    	isClick=1;    	
+	    	$(".CoservDoc .viewside").css('width', '500px');
+	    	ctrl.sel(".typeside").css('width', '500px');
+	    	ctrl.sel(".on").css('display','block'); 
+	    	ctrl.sel("i.fa-chevron-right").css('display','block');
+	    	ctrl.sel("i.fa-chevron-left").css('display','none');
+	    }          
+	}); 
+
+	/*Pagination*/
+	if (ctrl.detectmob()){
+		ctrl.sel(".down").css('visibility','visible');
+	}
+	else {
+		ctrl.sel(".down").css('visibility','hidden');
+	}   
+};
+
+ctrl.detectmob = function () {
+	var  isMob = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i)
+		|| navigator.userAgent.match(/iPhone/i)	|| navigator.userAgent.match(/iPad/i)
+		|| navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i)
+		|| navigator.userAgent.match(/Windows Phone/i);
+	
+	return isMob;
+}

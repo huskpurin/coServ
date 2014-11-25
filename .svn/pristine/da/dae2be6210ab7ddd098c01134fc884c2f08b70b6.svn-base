@@ -1,0 +1,70 @@
+@import "coserv.scss";
+@include link;
+
+@mixin iStyle {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	padding-top: 18px;
+	font-size: $fs1 * 6;
+	color: #333;	
+}
+
+.content {
+	@include content;
+	font-family: $ff1;
+	h1 {
+		@include h1;
+		span {
+			@include span;
+		}
+	}
+	.setHeight {
+		height: 290px;
+		i {
+			@include iStyle;
+		}
+		.sub {	
+			@include sub {
+				@include ma(-15px, -15px);
+				padding-top: 10px;					
+			}
+		}
+		p {
+			@include p;
+		}
+	}
+	.more {
+		@include more;
+	}
+}
+
+.h1Chang {
+	margin: 2em auto !important;
+	height: 42px !important;
+	border-bottom-width: 3px !important;
+}
+.spanChang {
+	margin-top: 0px !important;
+	font-size: 2em !important;
+}
+.heightChang {
+	margin-top: 2em !important;
+	height: 450px !important;
+}
+.iChang {
+	margin-top: 0px !important;
+	font-size: $fs1 * 13 !important;
+}
+.subChang {
+	font-size: 3.2em !important;
+	line-height: 2em !important;
+}
+.pChang {
+	font-size: 2.5em !important;
+	line-height: 1.4em !important;
+	margin: 0 -2em 4em !important;
+}
+
+
+

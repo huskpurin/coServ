@@ -1,0 +1,6 @@
+ctrl.startup = function() {	
+	ctrl.embed('.viewside', '/coserv/docView');
+};
+
+
+

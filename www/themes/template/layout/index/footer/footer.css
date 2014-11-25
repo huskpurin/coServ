@@ -1,0 +1,52 @@
+.footer {  
+  font-size: 1.2em;
+  background: #fff;
+  border-top: 2px solid #ddd !important;
+  padding-top: 30px;
+  padding-bottom: 30px; 
+  margin-bottom: 0; 
+  color: #ccc;
+}
+.link {
+  margin: 2em 0 3em !important;
+  text-align: center;
+}
+.link a {
+  color: #818181;
+  font-size: 1.2em;
+  line-height: 2.2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+.link a:last-child {
+  padding-right: 0;
+}
+.link a:hover {
+  color: #2EA0D1;
+}
+
+/* =======================================
+   Mobile STYLE
+   ======================================= */
+
+.mobile.footer {
+  font-size: 1em !important;
+  border-top-width: 4px !important;	
+}
+.mobile .link {
+  width: 53% !important;
+  margin: 3em auto 5em !important;
+  text-align: left;
+}
+.mobile .link a {
+  display: block;
+  font-size: 3.2em !important;
+  line-height: 2.5em !important;
+}
+.mobile .link a i {
+  width: 50px;
+  text-align: center;
+}
+.mobile .link a span {  
+  text-align: left;
+}

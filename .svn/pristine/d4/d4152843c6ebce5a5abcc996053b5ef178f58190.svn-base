@@ -1,0 +1,133 @@
+@import "coserv.scss";
+@include link;
+
+.typeside {
+  width: 230px;  
+  min-height: 700px;
+  height: auto;
+  margin: 0;  
+  @include pa(20px, 20px);    
+  background: #dfdfdf; 
+  position: absolute;
+  right: 0px; 
+  top: 0px;
+  float:right;
+  z-index: 9999;
+  //收合按鈕
+  .side-nav {    
+    @include border-radius-all(8px, 0, 0, 8px);  
+    cursor: pointer;        
+    width: 80px;
+    height: 80px;      
+    padding-top: 20px;
+    padding-left: 20px;
+    background: #dfdfdf;
+    font-size: $fs1 * 3;
+    color: #666;
+    position: relative;
+    top: 200px;
+    right: 90px;
+    z-index: 9999 !important;
+    i {      
+      display: block;
+      @include ma;
+      &:hover {
+        color: #999;
+      }
+    }
+  }  
+  .type {
+    width: 160px;
+    margin: 0em auto 3em;
+    text-align: center;
+    @include border-bottom(4px, double, #999);
+    span {
+      font-size: $fs1 * 2.1;
+      color: #4d4d4d;
+      line-height: $fs1 * 2;        
+    }
+  }
+  .callout {
+    margin: 10px 20px 10px;  
+    cursor: pointer;
+    @include border-bottom(1px, solid, #bcbcbc);
+    h3 {
+      height: 30px;
+      // color: #285E9D;
+      color: #2781B6;
+      line-height: $fs1 * 2;
+      font-size: $fs1 * 1.2;
+      margin: 0;
+      overflow: hidden;
+      text-overflow : ellipsis;
+      &:hover {
+        color: #6D6D6D;
+      }
+    }
+    small {
+      display: block;
+      color: #aaa;
+      text-align: right;
+      margin-bottom: 5px;
+      &:hover {
+        color: #505050;
+      }
+    }
+  }      
+  //分頁按鈕
+  .row_down {
+    width: $w1 - +5%;;
+    margin: 40px auto;    
+    .pagination {
+      @include wrapper {
+        font-family: $ff2;
+        font-size: $fs1;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: normal;
+        text-align: center;
+        clear: both;
+        margin: 30px auto 0;
+      }        
+      a, span {
+        @include border-radius(2em);
+        @include border(4px, solid, #fff);
+        padding: .7em .8em .6em .8em;
+        margin: 0 0.5em;  
+        color: #fff;
+      }
+      a {
+        background: #599CCE;
+        &:hover {
+          background: #FFF;
+          color: #000;
+          border-color: #599CCE;
+        }
+      }
+      span {  
+        background: #999;
+      }
+    }
+  }
+}  
+
+
+/* -----Setting font-size----- */
+
+@media screen and (max-width: 1100px) {     
+  .typeside {
+    width: 500px !important;  
+  }
+  .typeside .type span {
+    font-size: $fs1 * 2.8 !important;
+    line-height: $fs1 * 2 !important;  
+  }
+  .typeside .callout a h3{      
+    font-size: $fs1 * 2 !important;
+    line-height: $fs1 * 2 !important;
+    height: 60px !important;
+  } 
+  .typeside .callout a small {
+    font-size: $w1 !important;
+  }
+}      

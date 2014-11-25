@@ -1,0 +1,51 @@
+@import "coserv.scss";
+@include link;
+
+.wrapper {
+  margin: 0;
+  margin-top: 52px;
+  font-family: $ff1;
+  #indexCarousel {
+    margin: 0;
+    .carousel-inner {  
+      height: 400px;
+      vertical-align: middle !important;
+      margin: 0 auto;
+      //背景漸層
+      background: #dedede; //Old browsers
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dedede), color-stop(50%,#ffffff), color-stop(55%,#ffffff), color-stop(100%,#dadada)); //Chrome,Safari4+
+      background: -webkit-linear-gradient(top, #dedede 0%,#ffffff 50%,#ffffff 55%,#dadada 100%); //Chrome10+,Safari5.1+
+      background: -moz-linear-gradient(top, #dedede 0%, #ffffff 50%, #ffffff 55%, #dadada 100%); //FF3.6+    
+      background: -moz-gradient(top, #dedede 0%, #ffffff 50%, #ffffff 55%, #dadada 100%); //FF  
+      background: -o-linear-gradient(top, #dedede 0%,#ffffff 50%,#ffffff 55%,#dadada 100%); //Opera 11.10+
+      background: -ms-linear-gradient(top, #dedede 0%,#ffffff 50%,#ffffff 55%,#dadada 100%); //IE10+
+      background: linear-gradient(to bottom, #dedede 0%,#ffffff 50%,#ffffff 55%,#dadada 100%); //W3C
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#dedede',GradientType=0 ); //IE6-9
+      .item {
+        height: $w1 !important;
+        vertical-align: middle;
+        text-align: center;
+        margin: 0;          
+        //內文
+        .carousel-caption {
+          position: absolute;  
+          left: 0;
+          bottom: 0;
+          z-index: 10;
+          margin-bottom: 3em;
+          width: $w1;
+          padding-top: 20px;
+          padding-bottom: 20px;
+          color: #000;
+          text-align: center;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, .6);  
+        }
+        //圖片
+        img{  
+          display: block; 
+          margin: 4em auto 0; 
+        }
+      }
+    }    
+  }
+}
