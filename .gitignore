@@ -1,3 +1,14 @@
+vim .gitignore
 /.DS_Store
+log/*.log
 /node_modules
 /npm-debug.log
+/.svn
+/.settings
+www/themes/biomooi/
+www/themes/play/
+www/themes/responsive/
+www/themes/sample/
+www/themes/shared/
+www/cont/biomooi/
+www/cont/shared/play
