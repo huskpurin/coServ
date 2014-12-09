@@ -1,1 +1,0 @@
-/shared/dist/js/bootstrap.js
