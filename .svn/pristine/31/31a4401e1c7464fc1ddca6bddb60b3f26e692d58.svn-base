@@ -1,8 +1,0 @@
-@import "wonderful.scss";
-@import "scrollbar.scss";
-
-.contactInfo {		
-	p {
-		@include p;			
-	}
-}

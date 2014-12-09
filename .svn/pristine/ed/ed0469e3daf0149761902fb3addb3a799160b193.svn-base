@@ -1,2 +1,0 @@
-<!-- TODO: 清單layout -->
-<%=JSON.stringify(value)%>

@@ -1,5 +1,0 @@
-<% block('/coserv/banner'); %>
-<% block('/coserv/guide'); %>
-<% block('/coserv/content'); %>
-
-<% block('/coserv/form'); %>
